@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.software_meth_4.controllers.MainController">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.software_meth_4.controllers.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -35,7 +40,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="donutContainer" maxHeight="160.0" maxWidth="227.0" onMouseClicked="#onDonutContainerClick" prefHeight="160.0" prefWidth="227.0" style="-fx-background-color: purple; -fx-cursor: pointer;" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <AnchorPane fx:id="donutContainer" maxHeight="160.0" maxWidth="227.0" onMouseClicked="#onDonutContainerClick" prefHeight="160.0" prefWidth="227.0" style="-fx-background-color: purple; -fx-cursor: hand;" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets left="40.0" />
                </GridPane.margin>
@@ -52,7 +57,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="sandwichContainer" maxHeight="160.0" maxWidth="217.0" onMouseClicked="#onSandwichContainerClick" prefHeight="160.0" prefWidth="217.0" style="-fx-background-color: green; -fx-cursor: pointer;" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <AnchorPane fx:id="sandwichContainer" maxHeight="160.0" maxWidth="217.0" onMouseClicked="#onSandwichContainerClick" prefHeight="160.0" prefWidth="217.0" style="-fx-background-color: green; -fx-cursor: hand;" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="40.0" />
                </GridPane.margin>
@@ -69,7 +74,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="coffeeContainer" maxHeight="160.0" maxWidth="227.0" onMouseClicked="#onCoffeeContainerClick" prefHeight="160.0" prefWidth="227.0" style="-fx-background-color: green; -fx-cursor: pointer;" GridPane.rowIndex="2">
+            <AnchorPane fx:id="coffeeContainer" maxHeight="160.0" maxWidth="227.0" onMouseClicked="#onCoffeeContainerClick" prefHeight="160.0" prefWidth="227.0" style="-fx-background-color: green; -fx-cursor: hand;" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="40.0" />
                </GridPane.margin>
@@ -86,7 +91,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="currentOrderContainer" maxHeight="70.0" maxWidth="226.0" onMouseClicked="#onCurrentOrdersContainerClick" prefHeight="61.0" prefWidth="226.0" style="-fx-background-color: purple; -fx-cursor: pointer;" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <AnchorPane fx:id="currentOrderContainer" maxHeight="70.0" maxWidth="226.0" onMouseClicked="#onCurrentOrdersContainerClick" prefHeight="61.0" prefWidth="226.0" style="-fx-background-color: purple; -fx-cursor: hand;" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets right="40.0" top="24.0" />
                </GridPane.margin>
@@ -98,7 +103,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="ordersPlacedContainer" maxHeight="70.0" maxWidth="226.0" onMouseClicked="#onOrdersPlacedContainerClick" prefHeight="70.0" prefWidth="226.0" style="-fx-background-image: green; -fx-cursor: pointer;" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+            <AnchorPane fx:id="ordersPlacedContainer" maxHeight="70.0" maxWidth="226.0" onMouseClicked="#onOrdersPlacedContainerClick" prefHeight="70.0" prefWidth="226.0" style="-fx-background-image: green; -fx-cursor: hand;" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                <GridPane.margin>
                   <Insets bottom="24.0" right="40.0" />
                </GridPane.margin>

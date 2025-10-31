@@ -20,7 +20,7 @@ public class MainController {
     public void initialize(){
     }
 
-
+    //Page switching
     @FXML
     private void onDonutContainerClick() throws IOException {
         Main.switchRoot("donut-view.fxml");

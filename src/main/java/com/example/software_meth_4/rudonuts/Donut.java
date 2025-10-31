@@ -15,7 +15,7 @@ public class Donut extends MenuItem{
 
     //no tax
     public double price(){
-        return type.getPrice();
+        return (type.getPrice() * quantity);
     };
 
     public DonutType getType() { return type; }

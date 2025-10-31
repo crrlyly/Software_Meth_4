@@ -7,9 +7,9 @@ public class Sandwich extends MenuItem{
     protected Protein protein;
     protected ArrayList<AddOns> addOns;
 
+    //no tax, dont forget to multiply by quantity
     public double price(){
         double price = 0;
-        //check what type of protein
         price = price + protein.getPrice();
         //loop through addons and add to price
         //return price

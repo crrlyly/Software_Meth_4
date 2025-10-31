@@ -10,7 +10,7 @@ public class Coffee extends MenuItem{
         this.size = size;
     }
 
-    //no tax
+   //dont forget to multiply by quantity
     public double price(){
         double price = 0;
         price = price + size.getBasePrice();

@@ -13,7 +13,7 @@ public class Donut extends MenuItem{
         this.flavor = flavor;
     }
 
-    //no tax
+    //dont forget to multiply by quantity
     public double price(){
         return (type.getPrice() * quantity);
     };

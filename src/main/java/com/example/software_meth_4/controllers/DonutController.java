@@ -1,9 +1,12 @@
-package com.example.software_meth_4;
+package com.example.software_meth_4.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class Controller {
+import java.io.IOException;
+
+public class DonutController{
+
     @FXML
     private Label welcomeText;
 

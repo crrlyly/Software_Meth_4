@@ -8,12 +8,30 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
+
+    private static Scene mainScene;
+
+//
+//    @Override
+//    public void start(Stage stage) throws IOException {
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("main-view.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+//        stage.setTitle("RU Cafe");
+//        stage.setScene(scene);
+//        stage.show();
+//    }
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("main-view.fxml"));
+        mainScene = new Scene(fxmlLoader.load(), 600, 600);
+        stage.setTitle("RU Cafe");
+        stage.setScene(mainScene);
         stage.show();
+    }
+
+    public static void switchRoot(String fxml) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxml));
+        mainScene.setRoot(loader.load());
     }
 }

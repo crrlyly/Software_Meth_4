@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.software_meth_4.controllers.OrdersPlacedController"
-            prefHeight="600.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.software_meth_4.controllers.OrdersPlacedController">
+   <children>
+      <GridPane prefHeight="600.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.20001220703125" minWidth="10.0" prefWidth="208.000048828125" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.800048828125" minWidth="10.0" prefWidth="180.79995117187497" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.39996337890625" minWidth="10.0" prefWidth="210.20004882812498" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="170.59998779296876" minHeight="2.3999878406524715" prefHeight="114.60000610351562" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="347.1999961853027" minHeight="7.8000213623047046" prefHeight="63.399993896484375" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="407.7999786376953" minHeight="10.0" prefHeight="340.3999877929687" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="123.39999999999998" minHeight="10.0" prefHeight="78.0000122070312" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: purple;" text="ORDERS PLACED" textAlignment="CENTER" textFill="WHITE" GridPane.columnSpan="2147483647">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Label>
+            <ListView prefHeight="350.0" prefWidth="539.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="30.0" right="30.0" />
+               </GridPane.margin>
+            </ListView>
+            <Button fx:id="cancelOrdersBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="136.0" style="-fx-background-color: yellow; -fx-cursor: hand;" text="Cancel Order" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button fx:id="exportOrdersBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: yellow; -fx-cursor: hand;" text="Export Orders" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button fx:id="mainMenuBtn" mnemonicParsing="false" onMouseClicked="#onMainMenuBtnClick" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: purple; -fx-cursor: hand;" text="Main Menu" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <ComboBox prefWidth="150.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Label alignment="CENTER_RIGHT" prefHeight="104.0" prefWidth="264.0" text="Total Amount:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextArea maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="38.0" prefWidth="157.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </TextArea>
+         </children>
+      </GridPane>
+   </children>
 </AnchorPane>

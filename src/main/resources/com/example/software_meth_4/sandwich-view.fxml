@@ -1,14 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.software_meth_4.controllers.SandwichController"
-            prefHeight="600.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.software_meth_4.controllers.SandwichController">
+   <children>
+      <GridPane prefHeight="600.0" prefWidth="580.0" style="-fx-background-color: green;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.79998779296875" minWidth="10.0" prefWidth="307.8000244140625" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="541.6000129699706" minWidth="10.0" prefWidth="271.79997558593743" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="214.99998168945314" minHeight="10.0" prefHeight="214.99998168945314" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="161.60000305175782" minHeight="10.0" prefHeight="67.20001831054685" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="132.5999816894531" minHeight="10.0" prefHeight="74.39999084472652" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="162.39999999999998" minHeight="10.0" prefHeight="91.20001831054685" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="110.99997558593748" minHeight="10.0" prefHeight="30.400012207031295" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="79.00003662109373" minHeight="10.0" prefHeight="59.80002441406248" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="140.0" prefWidth="580.0" style="-fx-background-color: purple;" text="Sandwiches" textFill="WHITE" GridPane.columnSpan="2147483647">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Label>
+            <Label text="Bread" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <RadioButton mnemonicParsing="false" text="Bagel" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Wheat" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="30.0" />
+               </GridPane.margin>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Sourdough" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label text="Protein" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <RadioButton mnemonicParsing="false" text="Beef" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Chicken" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Salmon" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label text="Add-On" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane prefHeight="86.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <CheckBox layoutX="35.0" layoutY="52.0" mnemonicParsing="false" text="Tomato" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="35.0" layoutY="14.0" mnemonicParsing="false" text="Lettuce" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="185.0" layoutY="52.0" mnemonicParsing="false" text="Onion" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="185.0" layoutY="14.0" mnemonicParsing="false" text="Cheese" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </AnchorPane>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: yellow; -fx-cursor: hand;" text="Add to Order" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="mainMenuBtn" mnemonicParsing="false" onMouseClicked="#onMainMenuBtnClick" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: purple; -fx-cursor: hand;" text="Main Menu" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <TextArea editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="131.0" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <ComboBox prefHeight="26.0" prefWidth="122.0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <ImageView fitHeight="139.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@images/CoverSandwich.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+            </ImageView>
+         </children>
+      </GridPane>
+   </children>
 </AnchorPane>

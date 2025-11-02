@@ -1,16 +1,22 @@
 package com.example.software_meth_4.controllers;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
 
-public class OrdersPlacedController extends Application {
+import com.example.software_meth_4.Main;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 
-    public static void main(String[] args) {
-        launch(args);
+import java.io.IOException;
+
+
+public class OrdersPlacedController{
+
+    @FXML private Button mainMenuBtn;
+
+    public void initialize(){
     }
 
-    @Override
-    public void start(Stage primaryStage) {
-
+    @FXML
+    private void onMainMenuBtnClick() throws IOException {
+        Main.switchRoot("main-view.fxml");
     }
 }

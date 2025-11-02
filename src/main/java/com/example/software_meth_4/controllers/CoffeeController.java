@@ -1,16 +1,16 @@
 package com.example.software_meth_4.controllers;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
+import com.example.software_meth_4.Main;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 
-public class CoffeeController extends Application {
+import java.io.IOException;
 
-    public static void main(String[] args) {
-        launch(args);
+
+public class CoffeeController{
+
+    public void initialize(){
     }
 
-    @Override
-    public void start(Stage primaryStage) {
 
-    }
 }

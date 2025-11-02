@@ -19,6 +19,7 @@ public class MainController {
     @FXML private AnchorPane currentOrderContainer;
 
     public void initialize(){
+
     }
 
     //Page switching

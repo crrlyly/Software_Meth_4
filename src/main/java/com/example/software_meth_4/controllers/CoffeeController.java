@@ -10,8 +10,13 @@ import java.io.IOException;
 
 public class CoffeeController{
 
+    @FXML private Button mainMenuBtn;
+
     public void initialize(){
     }
 
-
+    @FXML
+    private void onMainMenuBtnClick() throws IOException {
+        Main.switchRoot("main-view.fxml");
+    }
 }

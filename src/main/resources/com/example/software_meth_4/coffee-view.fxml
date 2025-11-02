@@ -1,14 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.software_meth_4.controllers.CoffeeController"
-            prefHeight="600.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.software_meth_4.controllers.CoffeeController">
+   <children>
+      <GridPane prefHeight="600.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="202.80001831054688" minHeight="10.0" prefHeight="194.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="188.80001831054688" minHeight="10.0" prefHeight="81.6000061035156" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="216.7999969482422" minHeight="10.0" prefHeight="75.19999389648439" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="221.20001831054685" minHeight="10.0" prefHeight="89.5999755859375" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="194.39999999999998" minHeight="10.0" prefHeight="80.80002441406248" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="133.19998779296873" minHeight="10.0" prefHeight="82.39997558593745" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="122.0" prefWidth="600.0" style="-fx-background-color: purple;" text="Coffee" textFill="WHITE" GridPane.columnSpan="2147483647">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="100.0" />
+               </padding>
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="124.0" fitWidth="171.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="2147483647">
+               <image>
+                  <Image url="@images/CoverCoffee.png" />
+               </image>
+            </ImageView>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.rowSpan="3">
+               <children>
+                  <CheckBox layoutX="68.0" layoutY="35.0" mnemonicParsing="false" text="Whipped Cream" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="68.0" layoutY="114.0" mnemonicParsing="false" text="Milk" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="230.0" layoutY="114.0" mnemonicParsing="false" text="Mocha" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="68.0" layoutY="192.0" mnemonicParsing="false" text="Caramel" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox layoutX="230.0" layoutY="35.0" mnemonicParsing="false" prefWidth="106.0" text="Vanilla" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </AnchorPane>
+            <ComboBox prefHeight="26.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox prefHeight="26.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField editable="false" prefHeight="26.0" prefWidth="179.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets right="50.0" />
+               </GridPane.margin>
+            </TextField>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="163.0" style="-fx-cursor: hand; -fx-background-color: yellow;" text="Add to Order" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="mainMenuBtn" mnemonicParsing="false" onMouseClicked="#onMainMenuBtnClick" prefHeight="26.0" prefWidth="167.0" style="-fx-cursor: hand; -fx-background-color: purple;" text="Main Menu" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
 </AnchorPane>

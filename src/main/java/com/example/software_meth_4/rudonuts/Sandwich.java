@@ -7,6 +7,13 @@ public class Sandwich extends MenuItem{
     protected Protein protein;
     protected ArrayList<AddOns> addOns;
 
+    public Sandwich(int quantity, Bread bread, Protein protein, ArrayList<AddOns> addOns) {
+        super(quantity);
+        this.bread = bread;
+        this.protein = protein;
+        this.addOns = addOns;
+    }
+
     //dont forget to multiply by quantity
     public double price(){
         double price = 0;

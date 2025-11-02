@@ -1,16 +1,13 @@
 package com.example.software_meth_4.controllers;
 
-import com.example.software_meth_4.GlobalData;
 import com.example.software_meth_4.Main;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-
 import java.io.IOException;
 
-public class MainController {
+//FINISHED!!!
 
-    // to switch views do Main.switchRoot("donutView.fxml");
+public class MainController {
 
     @FXML private AnchorPane donutContainer;
     @FXML private AnchorPane sandwichContainer;

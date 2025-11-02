@@ -6,8 +6,10 @@ public class Coffee extends MenuItem{
     private ArrayList<AddIns> addIns;
     private final static double ADDIN_COST = 0.25;
 
-    public Coffee(CupSize size) {
+    public Coffee(int quantity, CupSize size, ArrayList<AddIns> addIns) {
+        super(quantity);
         this.size = size;
+        this.addIns = addIns;
     }
 
    //dont forget to multiply by quantity

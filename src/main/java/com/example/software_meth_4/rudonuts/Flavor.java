@@ -4,20 +4,20 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public enum Flavor {
-    YEAST_GLAZED(DonutType.YEAST),
-    YEAST_CHOCOLATE(DonutType.YEAST),
-    YEAST_STRAWBERRY(DonutType.YEAST),
-    YEAST_VANILLA(DonutType.YEAST),
-    YEAST_MAPLE(DonutType.YEAST),
-    YEAST_CINNAMON_SUGAR(DonutType.YEAST),
+    GLAZED(DonutType.YEAST),
+    CHOCOLATE(DonutType.YEAST),
+    STRAWBERRY(DonutType.YEAST),
+    VANILLA(DonutType.YEAST),
+    MAPLE(DonutType.YEAST),
+    CINNAMON_SUGAR(DonutType.YEAST),
 
-    CAKE_PLAIN(DonutType.CAKE),
-    CAKE_CHOCOLATE(DonutType.CAKE),
-    CAKE_BLUEBERRY(DonutType.CAKE),
+    PLAIN(DonutType.CAKE),
+    MARBLE(DonutType.CAKE),
+    BLUEBERRY(DonutType.CAKE),
 
-    HOLE_POWDERED(DonutType.DONUTHOLE),
-    HOLE_GLAZED(DonutType.DONUTHOLE),
-    HOLE_CINNAMON(DonutType.DONUTHOLE),
+    POWDERED(DonutType.DONUTHOLE),
+    SEMI_GLAZED(DonutType.DONUTHOLE),
+    CINNAMON(DonutType.DONUTHOLE),
 
     PUMPKIN(DonutType.SEASONAL),
     STRAWBERRY_GLAZED(DonutType.SEASONAL);
@@ -27,8 +27,7 @@ public enum Flavor {
     Flavor(DonutType type) { this.type = type; }
     public DonutType getType() { return type; }
 
-    /** Helper to fetch all flavors allowed for a type */
-    static List<Flavor> byType(DonutType type) {
+    public static List<Flavor> byType(DonutType type) {
         return Arrays.stream(values())
                 .filter(f -> f.type == type)
                 .collect(Collectors.toList());

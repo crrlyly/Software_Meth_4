@@ -29,8 +29,8 @@ public class DonutController{
     private final DecimalFormat df = new DecimalFormat("0.00");
 
     public void initialize(){
-        initializeDonutTypeDropDown();
-        initializeQuantityDropDown();
+        initDonutTypeDropDown();
+        initQuantityDropDown();
         displayFlavors.setDisable(false);
         displayFlavors.setMouseTransparent(false);
         displayFlavors.toFront();
@@ -53,7 +53,7 @@ public class DonutController{
     }
 
     @FXML
-    private void initializeDonutTypeDropDown(){
+    private void initDonutTypeDropDown(){
         typeDropDown.getItems().addAll(DonutType.values());
         typeDropDown.setCellFactory(param -> new ListCell<DonutType>() {
             @Override
@@ -75,7 +75,7 @@ public class DonutController{
     }
 
     @FXML
-    private void initializeQuantityDropDown(){
+    private void initQuantityDropDown(){
         Integer[] nums = {1,2,3,4,5,6,7,8,9,10};
         quantity.getItems().addAll(nums);
     }

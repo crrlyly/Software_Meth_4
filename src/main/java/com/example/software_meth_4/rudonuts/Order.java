@@ -19,7 +19,16 @@ public class Order {
         return listOfItems;
     }
 
-    public void setListOfItems(ArrayList<MenuItem> listOfItems) {
-        this.listOfItems = listOfItems;
+    @Override
+    public boolean equals(Object obj){
+        if(obj instanceof Order order){
+            return this.orderNumber == order.orderNumber;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(orderNumber);
     }
 }

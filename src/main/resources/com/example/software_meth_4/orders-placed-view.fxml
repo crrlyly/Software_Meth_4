@@ -25,16 +25,16 @@
                   <Font name="System Bold" size="48.0" />
                </font>
             </Label>
-            <ListView prefHeight="350.0" prefWidth="539.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
+            <ListView fx:id="listView" prefHeight="350.0" prefWidth="539.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="30.0" right="30.0" />
                </GridPane.margin>
             </ListView>
-            <Button fx:id="cancelOrdersBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="136.0" style="-fx-background-color: yellow; -fx-cursor: hand;" text="Cancel Order" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <Button fx:id="cancelOrdersBtn" mnemonicParsing="false" onAction="#cancelOrder" prefHeight="26.0" prefWidth="136.0" style="-fx-background-color: yellow; -fx-cursor: hand;" text="Cancel Order" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Button>
-            <Button fx:id="exportOrdersBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: yellow; -fx-cursor: hand;" text="Export Orders" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <Button fx:id="exportOrdersBtn" mnemonicParsing="false" onMouseClicked="#exportOrders" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: yellow; -fx-cursor: hand;" text="Export Orders" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Button>
@@ -42,17 +42,17 @@
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Button>
-            <ComboBox prefWidth="150.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <ComboBox fx:id="orderNumberDropDown" onAction="#getOrderInfo" prefWidth="150.0" promptText="Order Number" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <Label alignment="CENTER_RIGHT" prefHeight="104.0" prefWidth="264.0" text="Total Amount:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextArea maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="38.0" prefWidth="157.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+            <TextField fx:id="totalTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="136.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="20.0" />
                </GridPane.margin>
-            </TextArea>
+            </TextField>
          </children>
       </GridPane>
    </children>

@@ -10,7 +10,6 @@ public class Donut extends MenuItem{
         this.flavor = flavor;
     }
 
-    //dont forget to multiply by quantity
     public double price(){
         return (type.getPrice() * quantity);
     };
@@ -24,5 +23,10 @@ public class Donut extends MenuItem{
             return this.type.equals(donut.type) && this.flavor.equals(donut.flavor);
         }
         return false;
+    }
+
+    @Override
+    public String toString(){
+        return flavor.name() + " " + type.name() + " donut (" + quantity + ")";
     }
 }

@@ -22,4 +22,17 @@ public class Sandwich extends MenuItem{
         }
         return price * quantity;
     };
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Sandwich sandwich){
+            return this.bread.equals(sandwich.bread) && this.protein.equals(sandwich.protein) && this.addOns.equals(sandwich.addOns);
+        }
+        return false;
+    }
+
+    @Override
+    public String toString(){
+        return protein.name() + " sandwich (" + quantity + ") on " + bread.name() + " with " + addOns.toString();
+    }
 }

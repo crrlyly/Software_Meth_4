@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-import static com.example.software_meth_4.GlobalData.allOrders;
+import static com.example.software_meth_4.GlobalData.currentOrder;
 
 public class SandwichController{
 
@@ -37,7 +37,6 @@ public class SandwichController{
     private ToggleGroup proteinGroup;
 
     private final DecimalFormat df = new DecimalFormat("0.00");
-    Order currentOrder = allOrders[allOrders.length-1];
 
 
     public void initialize(){
@@ -118,24 +117,26 @@ public class SandwichController{
         Protein protein = Protein.parseProtein(selected2.getText());
 
         MenuItem sandwich = new Sandwich(quantityDropDown.getValue(), bread, protein, getAddOns());
-        for (int i = 0; i < currentOrder.getListOfItems().size(); i++) {
-            MenuItem item = currentOrder.getListOfItems().get(i);
+        for (int i = 0; i < currentOrder.size(); i++) {
+            MenuItem item = currentOrder.get(i);
             if (item.equals(sandwich)) {
                 item.setQuantity(item.getQuantity() + sandwich.getQuantity());
+                showItemAddedPopup();
+                clearAll();
                 return;
             }
         }
-        currentOrder.getListOfItems().add(sandwich);
-        showOrderAddedPopup();
+        currentOrder.add(sandwich);
+        showItemAddedPopup();
         clearAll();
     }
 
     @FXML
-    private void showOrderAddedPopup() {
+    private void showItemAddedPopup() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Order Confirmation");
+        alert.setTitle("Item Confirmation");
         alert.setHeaderText(null);
-        alert.setContentText("Your order has been added successfully!");
+        alert.setContentText("Your item(s) has been added successfully!");
         alert.showAndWait();
     }
 

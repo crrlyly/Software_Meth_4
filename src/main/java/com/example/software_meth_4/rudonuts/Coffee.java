@@ -12,9 +12,20 @@ public class Coffee extends MenuItem{
         this.addIns = addIns;
     }
 
-
-
     public double price(){
         return (size.getBasePrice() + (addIns.toArray().length * ADDIN_COST)) * quantity;
     };
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Coffee coffee){
+            return this.size.equals(coffee.size) && this.addIns.equals(coffee.addIns);
+        }
+        return false;
+    }
+
+    @Override
+    public String toString(){
+        return size.name() + " coffee (" + quantity + ") with " + addIns.toString();
+    }
 }

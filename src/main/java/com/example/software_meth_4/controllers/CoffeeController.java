@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-import static com.example.software_meth_4.GlobalData.allOrders;
+import static com.example.software_meth_4.GlobalData.currentOrder;
 
 //FINISHED!!!
 
@@ -29,7 +29,6 @@ public class CoffeeController{
     @FXML private TextField price;
 
     private final DecimalFormat df = new DecimalFormat("0.00");
-    Order currentOrder = allOrders[allOrders.length-1];
 
     public void initialize(){
         initializeDonutTypeDropDown();
@@ -41,24 +40,27 @@ public class CoffeeController{
     @FXML
     private void clickAddToOrderBtn(){
         MenuItem coffee = new Coffee(quantityDropDown.getValue(), sizeDropDown.getValue(), getAddIns());
-        for (int i = 0; i < currentOrder.getListOfItems().size(); i++) {
-            MenuItem item = currentOrder.getListOfItems().get(i);
+        for (int i = 0; i < currentOrder.size(); i++) {
+            MenuItem item = currentOrder.get(i);
             if (item.equals(coffee)) {
                 item.setQuantity(item.getQuantity() + coffee.getQuantity());
+                showItemAddedPopup();
+                clearAll();
                 return;
             }
         }
-        currentOrder.getListOfItems().add(coffee);
-        showOrderAddedPopup();
+
+        currentOrder.add(coffee);
+        showItemAddedPopup();
         clearAll();
     }
 
     @FXML
-    private void showOrderAddedPopup() {
+    private void showItemAddedPopup() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Order Confirmation");
+        alert.setTitle("Item Confirmation");
         alert.setHeaderText(null);
-        alert.setContentText("Your order has been added successfully!");
+        alert.setContentText("Your item(s) has been added successfully!");
         alert.showAndWait();
     }
 

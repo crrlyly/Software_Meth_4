@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
-import static com.example.software_meth_4.GlobalData.allOrders;
+import static com.example.software_meth_4.GlobalData.currentOrder;
 
 
 //FINISHED!!!
@@ -27,7 +27,6 @@ public class DonutController{
     @FXML private Button addToOrderBtn;
 
     private final DecimalFormat df = new DecimalFormat("0.00");
-    Order currentOrder = allOrders[allOrders.length-1];
 
     public void initialize(){
         initializeDonutTypeDropDown();
@@ -131,18 +130,31 @@ public class DonutController{
     }
 
     @FXML
-    private void clickAddToOrderBtn(){
-        currentOrder.getListOfItems().addAll(displayOrder.getItems());
-        showOrderAddedPopup();
+    private void clickAddToOrderBtn() {
+        var dest = currentOrder;
+        var src  = displayOrder.getItems();
+
+        for (MenuItem incoming : src) {
+            int idx = dest.indexOf(incoming);
+            if (idx >= 0) {
+                MenuItem existing = dest.get(idx);
+                existing.setQuantity(existing.getQuantity() + incoming.getQuantity());
+            } else {
+                dest.add(incoming);
+            }
+        }
+
+        src.clear();
+        showItemAddedPopup();
         clearAll();
     }
 
     @FXML
-    private void showOrderAddedPopup() {
+    private void showItemAddedPopup() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Order Confirmation");
+        alert.setTitle("Item Confirmation");
         alert.setHeaderText(null);
-        alert.setContentText("Your order has been added successfully!");
+        alert.setContentText("Your item(s) has been added successfully!");
         alert.showAndWait();
     }
 

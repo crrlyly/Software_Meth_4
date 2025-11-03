@@ -64,18 +64,16 @@ public class CoffeeController{
 
     @FXML
     private void clearAll() {
-        // Clear all ComboBoxes
         sizeDropDown.getSelectionModel().clearSelection();
-        sizeDropDown.setValue(null);
+        sizeDropDown.getSelectionModel().selectFirst();
         quantityDropDown.getSelectionModel().clearSelection();
-        quantityDropDown.setValue(null);
+        quantityDropDown.getSelectionModel().selectFirst();
 
         for(CheckBox box: checkBoxes){
             box.setSelected(false);
         }
 
-        // Clear all TextFields
-        price.clear();
+        displayPrice();
     }
 
     @FXML
@@ -133,7 +131,6 @@ public class CoffeeController{
         }
         return addIns;
     }
-
 
     @FXML
     private void displayPrice(){

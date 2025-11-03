@@ -14,12 +14,12 @@ public class Sandwich extends MenuItem{
         this.addOns = addOns;
     }
 
-    //dont forget to multiply by quantity
     public double price(){
         double price = 0;
         price = price + protein.getPrice();
-        //loop through addons and add to price
-        //return price
-        return price;
+        for(AddOns add: addOns){
+            price = price + add.getPrice();
+        }
+        return price * quantity;
     };
 }

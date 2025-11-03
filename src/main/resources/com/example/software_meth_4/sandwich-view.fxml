@@ -38,12 +38,12 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <RadioButton mnemonicParsing="false" text="Bagel" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <RadioButton fx:id="bagelRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Bagel" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="Wheat" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <RadioButton fx:id="wheatRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Wheat" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -51,7 +51,7 @@
                   <Insets right="30.0" />
                </GridPane.margin>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="Sourdough" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <RadioButton fx:id="sourRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Sourdough" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -64,17 +64,17 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <RadioButton mnemonicParsing="false" text="Beef" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <RadioButton fx:id="beefRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Beef" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="Chicken" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <RadioButton fx:id="chickenRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Chicken" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="Salmon" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <RadioButton fx:id="salmonRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Salmon" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -89,29 +89,29 @@
             </Label>
             <AnchorPane prefHeight="86.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
-                  <CheckBox layoutX="35.0" layoutY="52.0" mnemonicParsing="false" text="Tomato" textFill="WHITE">
+                  <CheckBox fx:id="tomatoCheck" layoutX="35.0" layoutY="52.0" mnemonicParsing="false" onAction="#displayPrice" text="Tomato" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="35.0" layoutY="14.0" mnemonicParsing="false" text="Lettuce" textFill="WHITE">
+                  <CheckBox fx:id="lettuceCheck" layoutX="35.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayPrice" text="Lettuce" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="185.0" layoutY="52.0" mnemonicParsing="false" text="Onion" textFill="WHITE">
+                  <CheckBox fx:id="onionCheck" layoutX="185.0" layoutY="52.0" mnemonicParsing="false" onAction="#displayPrice" text="Onion" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox layoutX="185.0" layoutY="14.0" mnemonicParsing="false" text="Cheese" textFill="WHITE">
+                  <CheckBox fx:id="cheeseCheck" layoutX="185.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayPrice" text="Cheese" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </CheckBox>
                </children>
             </AnchorPane>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: yellow; -fx-cursor: hand;" text="Add to Order" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Button fx:id="addToOrderBtn" mnemonicParsing="false" onMouseClicked="#clickAddToOrderBtn" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: yellow; -fx-cursor: hand;" text="Add to Order" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -121,12 +121,12 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <TextArea editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="131.0" GridPane.rowIndex="4">
+            <TextField fx:id="price" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="138.0" GridPane.rowIndex="4">
                <GridPane.margin>
-                  <Insets left="20.0" />
+                  <Insets left="25.0" />
                </GridPane.margin>
-            </TextArea>
-            <ComboBox prefHeight="26.0" prefWidth="122.0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            </TextField>
+            <ComboBox fx:id="quantityDropDown" onAction="#displayPrice" prefHeight="26.0" prefWidth="122.0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
             <ImageView fitHeight="139.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                <image>
                   <Image url="@images/CoverSandwich.png" />

@@ -14,4 +14,20 @@ public enum Protein {
     public double getPrice() {
         return price;
     }
+
+    /**
+     * Parses a string into its corresponding Protein value (case-insensitive).
+     *
+     * @param proteinStr the protein string to parse
+     * @return the matching Protein constant if found; null if no match exists
+     */
+    public static Protein parseProtein(String proteinStr) {
+        Protein[] allProteins = Protein.values();
+        for (int i = 0; i < allProteins.length; i++) {
+            if (allProteins[i].name().equalsIgnoreCase(proteinStr)) {
+                return allProteins[i];
+            }
+        }
+        return null;
+    }
 }

@@ -23,7 +23,7 @@ public class DonutController{
     @FXML private Button add;
     @FXML private Button remove;
     @FXML private ListView<MenuItem> displayOrder;
-    @FXML private TextArea displaySubTotal;
+    @FXML private TextField displaySubTotal;
     @FXML private Button addToOrderBtn;
 
     private final DecimalFormat df = new DecimalFormat("0.00");
@@ -80,13 +80,14 @@ public class DonutController{
         quantity.getItems().addAll(nums);
     }
 
-    //TODO
+
     @FXML
     private void addDonut(){
-        //checks for empty stuff
-
-        //
-
+        if(typeDropDown.getValue() == null || quantity.getValue() == null ||
+                displayFlavors.getSelectionModel().getSelectedItem() == null){
+            showMissingInputPopup();
+            return;
+        }
         MenuItem donut = new Donut(quantity.getValue(), typeDropDown.getValue(),
                 displayFlavors.getSelectionModel().getSelectedItem());
 
@@ -95,6 +96,7 @@ public class DonutController{
             if (item.equals(donut)) {
                 item.setQuantity(item.getQuantity() + donut.getQuantity());
                 displayOrder.getItems().set(i, item);
+                displaySubTotal.setText("$" + df.format(getPrice()));
                 return;
             }
         }
@@ -119,7 +121,7 @@ public class DonutController{
 
     @FXML
     private void onMainMenuBtnClick() throws IOException {
-        Main.switchRoot("main-view.fxml");
+        Main.switchRoot("main-view.fxml", "RU Cafe");
     }
 
     @FXML
@@ -133,6 +135,11 @@ public class DonutController{
     private void clickAddToOrderBtn() {
         var dest = currentOrder;
         var src  = displayOrder.getItems();
+
+        if(src.isEmpty()){
+            showEmptyListPopup();
+            return;
+        }
 
         for (MenuItem incoming : src) {
             int idx = dest.indexOf(incoming);
@@ -155,6 +162,24 @@ public class DonutController{
         alert.setTitle("Item Confirmation");
         alert.setHeaderText(null);
         alert.setContentText("Your item(s) has been added successfully!");
+        alert.showAndWait();
+    }
+
+    @FXML
+    private void showEmptyListPopup() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Item Confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText("No donuts in list. Please add some.");
+        alert.showAndWait();
+    }
+
+    @FXML
+    private void showMissingInputPopup() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Item Confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText("Missing input. Please try again.");
         alert.showAndWait();
     }
 

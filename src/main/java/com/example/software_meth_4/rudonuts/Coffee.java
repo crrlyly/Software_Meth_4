@@ -26,6 +26,7 @@ public class Coffee extends MenuItem{
 
     @Override
     public String toString(){
-        return size.name() + " coffee (" + quantity + ") with " + addIns.toString();
+        String addInsString = (addIns.isEmpty()) ? "nothing" : addIns.toString();
+        return size.name() + " coffee (" + quantity + ") with " + addInsString;
     }
 }

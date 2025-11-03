@@ -22,22 +22,22 @@ public class MainController {
     //Page switching
     @FXML
     private void onDonutContainerClick() throws IOException {
-        Main.switchRoot("donut-view.fxml");
+        Main.switchRoot("donut-view.fxml", "RU Cafe - Donuts");
     }
     @FXML
     private void onSandwichContainerClick() throws IOException {
-        Main.switchRoot("sandwich-view.fxml");
+        Main.switchRoot("sandwich-view.fxml", "RU Cafe - Sandwiches");
     }
     @FXML
     private void onCoffeeContainerClick() throws IOException {
-        Main.switchRoot("coffee-view.fxml");
+        Main.switchRoot("coffee-view.fxml", "RU Cafe - Coffee");
     }
     @FXML
     private void onCurrentOrdersContainerClick() throws IOException {
-        Main.switchRoot("current-orders-view.fxml");
+        Main.switchRoot("current-orders-view.fxml", "RU Cafe - Current Order");
     }
     @FXML
     private void onOrdersPlacedContainerClick() throws IOException {
-        Main.switchRoot("orders-placed-view.fxml");
+        Main.switchRoot("orders-placed-view.fxml", "RU Cafe - Orders Placed");
     }
 }

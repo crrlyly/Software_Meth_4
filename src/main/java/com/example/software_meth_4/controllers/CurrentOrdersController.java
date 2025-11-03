@@ -37,7 +37,7 @@ public class CurrentOrdersController{
 
     @FXML
     private void onMainMenuBtnClick() throws IOException {
-        Main.switchRoot("main-view.fxml");
+        Main.switchRoot("main-view.fxml", "RU Cafe");
     }
 
     @FXML

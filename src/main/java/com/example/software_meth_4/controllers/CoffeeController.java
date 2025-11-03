@@ -110,7 +110,7 @@ public class CoffeeController{
 
     @FXML
     private void onMainMenuBtnClick() throws IOException {
-        Main.switchRoot("main-view.fxml");
+        Main.switchRoot("main-view.fxml", "RU Cafe");
     }
 
     @FXML

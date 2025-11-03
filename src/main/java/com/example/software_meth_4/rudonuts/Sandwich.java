@@ -33,6 +33,7 @@ public class Sandwich extends MenuItem{
 
     @Override
     public String toString(){
-        return protein.name() + " sandwich (" + quantity + ") on " + bread.name() + " with " + addOns.toString();
+        String addOnsString = (addOns.isEmpty()) ? "nothing" : addOns.toString();
+        return protein.name() + " sandwich (" + quantity + ") on " + bread.name() + " with " + addOnsString;
     }
 }

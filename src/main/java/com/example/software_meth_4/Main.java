@@ -11,7 +11,6 @@ public class Main extends Application {
 
     private static Scene mainScene;
 
-
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("main-view.fxml"));
@@ -21,8 +20,11 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void switchRoot(String fxml) throws IOException {
+    public static void switchRoot(String fxml, String title) throws IOException {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxml));
         mainScene.setRoot(loader.load());
+
+        Stage stage = (Stage) mainScene.getWindow();
+        stage.setTitle(title);
     }
 }

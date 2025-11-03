@@ -10,7 +10,7 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
-import static com.example.software_meth_4.GlobalData.currentOrder;
+import static com.example.software_meth_4.GlobalData.*;
 
 
 public class CurrentOrdersController{
@@ -63,7 +63,16 @@ public class CurrentOrdersController{
 
     @FXML
     private void placeOrder(){
+        if(currentOrder.isEmpty()){
+            showNoOrdersPopup();
+            return;
+        }
+        orderNumber += 1;
+        Order order = new Order(orderNumber, currentOrder);
+        allOrders.add(order);
+        currentOrder.clear();
         showOrderAddedPopup();
+        clearAll();
     }
 
     @FXML
@@ -76,15 +85,19 @@ public class CurrentOrdersController{
     }
 
     @FXML
-    private void clearAll() {
-        sizeDropDown.getSelectionModel().clearSelection();
-        sizeDropDown.getSelectionModel().selectFirst();
-        quantityDropDown.getSelectionModel().clearSelection();
-        quantityDropDown.getSelectionModel().selectFirst();
+    private void showNoOrdersPopup() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Order Confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText("No items in order. Please add some items and try again.");
+        alert.showAndWait();
+    }
 
-        for(CheckBox box: checkBoxes){
-            box.setSelected(false);
-        }
+    @FXML
+    private void clearAll() {
+        // Clear all ListViews
+        listView.getItems().clear();
+        listView.getItems().clear();
 
         displayPrice();
     }

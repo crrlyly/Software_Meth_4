@@ -9,4 +9,5 @@ import javafx.fxml.FXML;
 public class GlobalData {
     public static ArrayList<Order> allOrders = new ArrayList<>();
     public static ArrayList<MenuItem> currentOrder = new ArrayList<>();
+    public static int orderNumber = 0;
 }

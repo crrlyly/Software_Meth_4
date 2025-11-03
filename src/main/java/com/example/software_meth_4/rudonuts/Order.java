@@ -8,7 +8,7 @@ public class Order {
 
     public Order(int orderNumber, ArrayList<MenuItem> listOfItems) {
         this.orderNumber = orderNumber;
-        this.listOfItems = listOfItems;
+        this.listOfItems = new ArrayList<>(listOfItems);
     }
 
     public int getOrderNumber() {

@@ -12,12 +12,9 @@ public class Coffee extends MenuItem{
         this.addIns = addIns;
     }
 
-   //dont forget to multiply by quantity
+
+
     public double price(){
-        double price = 0;
-        price = price + size.getBasePrice();
-        //loop through AddIns and each time add ADDIN_COST for every added ADDIN
-        //multiply by quantity
-        return price;
+        return (size.getBasePrice() + (addIns.toArray().length * ADDIN_COST)) * quantity;
     };
 }

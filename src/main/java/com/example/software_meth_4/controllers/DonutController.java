@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
-import static com.example.software_meth_4.GlobalData.menuItemList;
+import static com.example.software_meth_4.GlobalData.allOrders;
 
 
 //FINISHED!!!
@@ -27,6 +27,7 @@ public class DonutController{
     @FXML private Button addToOrderBtn;
 
     private final DecimalFormat df = new DecimalFormat("0.00");
+    Order currentOrder = allOrders[allOrders.length-1];
 
     public void initialize(){
         initializeDonutTypeDropDown();
@@ -60,7 +61,7 @@ public class DonutController{
             protected void updateItem(DonutType item, boolean empty) {
                 super.updateItem(item, empty);
                 if (empty || item == null) {
-                    setText(null);
+                    setText("Donut Type");
                 } else {
                     switch (item) {
                         case YEAST -> setText("Yeast Donut");
@@ -131,8 +132,7 @@ public class DonutController{
 
     @FXML
     private void clickAddToOrderBtn(){
-        menuItemList.addAll(displayOrder.getItems());
-        System.out.println(menuItemList);
+        currentOrder.getListOfItems().addAll(displayOrder.getItems());
         showOrderAddedPopup();
         clearAll();
     }
@@ -146,6 +146,7 @@ public class DonutController{
         alert.showAndWait();
     }
 
+    @FXML
     private void clearAll() {
         // Clear all ComboBoxes
         typeDropDown.getSelectionModel().clearSelection();

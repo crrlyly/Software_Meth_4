@@ -1,10 +1,10 @@
 package com.example.software_meth_4.rudonuts;
 
 public enum CupSize {
-    LETTUCE(2.39),
-    TOMATO(2.99),
-    CHEESE(3.59),
-    ONION(4.19);
+    SHORT(2.39),
+    TALL(2.99),
+    GRANDE(3.59),
+    VENTI(4.19);
 
     private final double basePrice;
 

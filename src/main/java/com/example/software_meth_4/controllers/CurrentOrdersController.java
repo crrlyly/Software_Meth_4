@@ -23,16 +23,16 @@ public class CurrentOrdersController{
     private final DecimalFormat df = new DecimalFormat("0.00");
 
     public void initialize(){
-        displayItems();
-        displayPrice();
+        javafx.application.Platform.runLater(() -> {
+            displayItems();
+            displayPrice();
+        });
     }
 
     @FXML
     private void displayItems() {
-        listView.getItems().clear();
-        for (MenuItem item : currentOrder) {
-            listView.getItems().add(item);
-        }
+        listView.getItems().setAll(GlobalData.currentOrder);
+        listView.refresh();
     }
 
     @FXML

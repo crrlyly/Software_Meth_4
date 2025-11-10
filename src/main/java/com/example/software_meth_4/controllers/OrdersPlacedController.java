@@ -1,6 +1,5 @@
 package com.example.software_meth_4.controllers;
 
-import com.example.software_meth_4.GlobalData;
 import com.example.software_meth_4.Main;
 import com.example.software_meth_4.rudonuts.MenuItem;
 import com.example.software_meth_4.rudonuts.Order;
@@ -110,7 +109,7 @@ public class OrdersPlacedController{
                 }
                 double salesTax = subTotal * 0.06625;
                 double total = salesTax + subTotal;
-                writer.write("Order #" + order.getOrderNumber() + " Total: " + df.format("$" + total) + "\n");
+                writer.write("Order #" + order.getOrderNumber() + " Total (w tax): $" + df.format(total) + "\n");
                 for (MenuItem item : order.getListOfItems()) {
                     writer.write(" - " + item.toString() + "\n");
                 }

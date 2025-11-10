@@ -22,7 +22,7 @@ public class CoffeeController{
     @FXML private CheckBox mochaCheckBox;
     @FXML private CheckBox caramelCheckBox;
 
-    @FXML private CheckBox[] checkBoxes;
+    private CheckBox[] checkBoxes;
 
     @FXML private ComboBox<CupSize> sizeDropDown;
     @FXML private ComboBox<Integer> quantityDropDown;
@@ -31,7 +31,7 @@ public class CoffeeController{
     private final DecimalFormat df = new DecimalFormat("0.00");
 
     public void initialize(){
-        initializeDonutTypeDropDown();
+        initializeSizeTypeDropDown();
         initializeQuantityDropDown();
         checkBoxes = new CheckBox[]{creamCheckBox, vanillaCheckBox, milkCheckBox, mochaCheckBox, caramelCheckBox};
         displayPrice();
@@ -79,7 +79,7 @@ public class CoffeeController{
     }
 
     @FXML
-    private void initializeDonutTypeDropDown(){
+    private void initializeSizeTypeDropDown(){
         sizeDropDown.getItems().addAll(CupSize.values());
         sizeDropDown.setCellFactory(param -> new ListCell<CupSize>() {
             @Override

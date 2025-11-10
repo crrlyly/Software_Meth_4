@@ -9,11 +9,16 @@ import java.io.IOException;
 
 public class Main extends Application {
 
+    private static Stage stage;      // keep a Stage reference
     private static Scene mainScene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("main-view.fxml"));
+        Main.stage = stage;
+
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                Main.class.getResource("/com/example/software_meth_4/main-view.fxml")
+        );
         mainScene = new Scene(fxmlLoader.load(), 600, 620);
         stage.setTitle("RU Cafe");
         stage.setScene(mainScene);
@@ -21,10 +26,10 @@ public class Main extends Application {
     }
 
     public static void switchRoot(String fxml, String title) throws IOException {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxml));
+        FXMLLoader loader = new FXMLLoader(
+                Main.class.getResource("/com/example/software_meth_4/" + fxml)
+        );
         mainScene.setRoot(loader.load());
-
-        Stage stage = (Stage) mainScene.getWindow();
         stage.setTitle(title);
     }
 }

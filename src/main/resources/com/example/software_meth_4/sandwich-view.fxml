@@ -15,31 +15,35 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.software_meth_4.controllers.SandwichController">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #faedf1;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.software_meth_4.controllers.SandwichController">
    <children>
-      <GridPane prefHeight="600.0" prefWidth="580.0" style="-fx-background-color: green;">
+      <Label prefHeight="140.0" prefWidth="594.0" style="-fx-background-color: pink;" text="Sandwiches" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </Label>
+      <ImageView fitHeight="158.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="1.0">
+         <image>
+            <Image url="@images/CoverSandwich.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="-2.0" layoutY="153.0" prefHeight="447.0" prefWidth="582.0" style="-fx-background-color: #faedf1;">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.79998779296875" minWidth="10.0" prefWidth="307.8000244140625" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="541.6000129699706" minWidth="10.0" prefWidth="271.79997558593743" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.79998779296875" minWidth="10.0" prefWidth="296.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="541.6000129699706" minWidth="10.0" prefWidth="284.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="214.99998168945314" minHeight="10.0" prefHeight="214.99998168945314" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="161.60000305175782" minHeight="10.0" prefHeight="67.20001831054685" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="132.5999816894531" minHeight="10.0" prefHeight="74.39999084472652" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="162.39999999999998" minHeight="10.0" prefHeight="91.20001831054685" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="132.5999816894531" minHeight="10.0" prefHeight="84.79996337890628" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="162.39999999999998" minHeight="10.0" prefHeight="105.60003662109375" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="110.99997558593748" minHeight="10.0" prefHeight="30.400012207031295" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="79.00003662109373" minHeight="10.0" prefHeight="59.80002441406248" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="140.0" prefWidth="580.0" style="-fx-background-color: purple;" text="Sandwiches" textFill="WHITE" GridPane.columnSpan="2147483647">
-               <font>
-                  <Font size="48.0" />
-               </font>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </Label>
-            <Label text="Bread" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label text="Bread" textFill="#a96b7d" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="30.0" />
                </GridPane.margin>
@@ -47,12 +51,12 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <RadioButton fx:id="bagelRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Bagel" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <RadioButton fx:id="bagelRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Bagel" textFill="#a96b7d" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="wheatRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Wheat" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <RadioButton fx:id="wheatRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Wheat" textFill="#a96b7d" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -60,35 +64,12 @@
                   <Insets right="30.0" />
                </GridPane.margin>
             </RadioButton>
-            <RadioButton fx:id="sourRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Sourdough" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <RadioButton fx:id="sourRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Sourdough" textFill="#a96b7d" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <Label text="Protein" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets right="30.0" />
-               </GridPane.margin>
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <RadioButton fx:id="beefRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Beef" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </RadioButton>
-            <RadioButton fx:id="chickenRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Chicken" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </RadioButton>
-            <RadioButton fx:id="salmonRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Salmon" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </RadioButton>
-            <Label text="Add-On" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <Label text="Protein" textFill="#a96b7d" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="30.0" />
                </GridPane.margin>
@@ -96,54 +77,69 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <AnchorPane prefHeight="86.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <RadioButton fx:id="beefRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Beef" textFill="#a96b7d" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="chickenRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Chicken" textFill="#a96b7d" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="salmonRadioBtn" mnemonicParsing="false" onAction="#displayPrice" text="Salmon" textFill="#a96b7d" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label text="Add-On" textFill="#a96b7d" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane prefHeight="86.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <CheckBox fx:id="tomatoCheck" layoutX="35.0" layoutY="52.0" mnemonicParsing="false" onAction="#displayPrice" text="Tomato" textFill="WHITE">
+                  <CheckBox fx:id="tomatoCheck" layoutX="35.0" layoutY="52.0" mnemonicParsing="false" onAction="#displayPrice" text="Tomato" textFill="#a96b7d">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox fx:id="lettuceCheck" layoutX="35.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayPrice" text="Lettuce" textFill="WHITE">
+                  <CheckBox fx:id="lettuceCheck" layoutX="35.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayPrice" text="Lettuce" textFill="#a96b7d">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox fx:id="onionCheck" layoutX="185.0" layoutY="52.0" mnemonicParsing="false" onAction="#displayPrice" text="Onion" textFill="WHITE">
+                  <CheckBox fx:id="onionCheck" layoutX="185.0" layoutY="52.0" mnemonicParsing="false" onAction="#displayPrice" text="Onion" textFill="#a96b7d">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox fx:id="cheeseCheck" layoutX="185.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayPrice" text="Cheese" textFill="WHITE">
+                  <CheckBox fx:id="cheeseCheck" layoutX="185.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayPrice" text="Cheese" textFill="#a96b7d">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </CheckBox>
                </children>
             </AnchorPane>
-            <Button fx:id="addToOrderBtn" mnemonicParsing="false" onMouseClicked="#clickAddToOrderBtn" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: yellow; -fx-cursor: hand;" text="Add to Order" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Button fx:id="addToOrderBtn" mnemonicParsing="false" onMouseClicked="#clickAddToOrderBtn" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: #add8f0; -fx-cursor: hand;" text="Add to Order" textFill="#a96b7d" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="mainMenuBtn" mnemonicParsing="false" onMouseClicked="#onMainMenuBtnClick" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: purple; -fx-cursor: hand;" text="Main Menu" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+            <Button fx:id="mainMenuBtn" mnemonicParsing="false" onMouseClicked="#onMainMenuBtnClick" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: pink; -fx-cursor: hand;" text="Main Menu" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <TextField fx:id="price" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="138.0" GridPane.rowIndex="4">
+            <TextField fx:id="price" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #add8f0;" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="25.0" />
                </GridPane.margin>
             </TextField>
-            <ComboBox fx:id="quantityDropDown" onAction="#displayPrice" prefHeight="26.0" prefWidth="122.0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <ImageView fitHeight="139.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
-               <image>
-                  <Image url="@images/CoverSandwich.png" />
-               </image>
-               <GridPane.margin>
-                  <Insets left="30.0" />
-               </GridPane.margin>
-            </ImageView>
+            <ComboBox fx:id="quantityDropDown" onAction="#displayPrice" prefHeight="26.0" prefWidth="122.0" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </children>

@@ -1,6 +1,5 @@
 package com.example.software_meth_4.rudonuts;
 import java.util.ArrayList;
-import java.util.ArrayList;
 
 public class Sandwich extends MenuItem{
     protected Bread bread;

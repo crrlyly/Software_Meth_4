@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Order {
 
-    private int orderNumber;    //unique for each order
+    private int orderNumber;
     private ArrayList<MenuItem> listOfItems;
 
     public Order(int orderNumber, ArrayList<MenuItem> listOfItems) {

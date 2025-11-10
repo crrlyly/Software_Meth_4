@@ -2,24 +2,14 @@ package com.example.software_meth_4.controllers;
 
 import com.example.software_meth_4.Main;
 import javafx.fxml.FXML;
-import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
-//FINISHED!!!
-
 public class MainController {
-
-    @FXML private AnchorPane donutContainer;
-    @FXML private AnchorPane sandwichContainer;
-    @FXML private AnchorPane coffeeContainer;
-    @FXML private AnchorPane ordersPlacedContainer;
-    @FXML private AnchorPane currentOrderContainer;
 
     public void initialize(){
 
     }
 
-    //Page switching
     @FXML
     private void onDonutContainerClick() throws IOException {
         Main.switchRoot("donut-view.fxml", "RU Cafe - Donuts");

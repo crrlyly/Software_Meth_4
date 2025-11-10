@@ -1,6 +1,5 @@
 package com.example.software_meth_4.controllers;
 
-import com.example.software_meth_4.GlobalData;
 import com.example.software_meth_4.Main;
 import com.example.software_meth_4.rudonuts.*;
 import com.example.software_meth_4.rudonuts.MenuItem;

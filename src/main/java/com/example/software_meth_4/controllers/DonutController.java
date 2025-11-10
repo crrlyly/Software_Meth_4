@@ -12,19 +12,13 @@ import java.text.DecimalFormat;
 import static com.example.software_meth_4.GlobalData.currentOrder;
 
 
-//FINISHED!!!
-
 public class DonutController{
 
-    @FXML private Button mainMenuBtn;
     @FXML private ComboBox<DonutType> typeDropDown;
     @FXML private ListView<Flavor> displayFlavors;
     @FXML private ComboBox<Integer> quantity;
-    @FXML private Button add;
-    @FXML private Button remove;
     @FXML private ListView<MenuItem> displayOrder;
     @FXML private TextField displaySubTotal;
-    @FXML private Button addToOrderBtn;
 
     private final DecimalFormat df = new DecimalFormat("0.00");
 

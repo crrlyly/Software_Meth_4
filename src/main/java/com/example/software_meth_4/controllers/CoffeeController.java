@@ -12,8 +12,6 @@ import java.util.ArrayList;
 
 import static com.example.software_meth_4.GlobalData.currentOrder;
 
-//FINISHED!!!
-
 public class CoffeeController{
 
     @FXML private CheckBox creamCheckBox;

@@ -91,7 +91,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="currentOrderContainer" maxHeight="70.0" maxWidth="226.0" onMouseClicked="#onCurrentOrdersContainerClick" prefHeight="61.0" prefWidth="226.0" style="-fx-background-color: #add8f0;" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <AnchorPane fx:id="currentOrderContainer" maxHeight="70.0" maxWidth="226.0" onMouseClicked="#onCurrentOrdersContainerClick" prefHeight="61.0" prefWidth="226.0" style="-fx-background-color: #add8f0; -fx-cursor: hand;" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets right="40.0" top="24.0" />
                </GridPane.margin>
@@ -103,7 +103,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="ordersPlacedContainer" maxHeight="70.0" maxWidth="226.0" onMouseClicked="#onOrdersPlacedContainerClick" prefHeight="70.0" prefWidth="226.0" style="-fx-background-color: #add8f0;" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+            <AnchorPane fx:id="ordersPlacedContainer" maxHeight="70.0" maxWidth="226.0" onMouseClicked="#onOrdersPlacedContainerClick" prefHeight="70.0" prefWidth="226.0" style="-fx-background-color: #add8f0; -fx-cursor: hand;" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                <GridPane.margin>
                   <Insets bottom="24.0" right="40.0" />
                </GridPane.margin>

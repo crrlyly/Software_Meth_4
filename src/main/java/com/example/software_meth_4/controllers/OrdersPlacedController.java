@@ -112,7 +112,10 @@ public class OrdersPlacedController{
                 }
                 double salesTax = subTotal * 0.06625;
                 double total = salesTax + subTotal;
-                writer.write("Order #" + order.getOrderNumber() + " Total (w tax): $" + df.format(total) + "\n");
+                writer.write("Order #" + order.getOrderNumber()
+                        + "\nSub-Total (no tax): $" + df.format(subTotal)
+                        + "\nTax: $" + df.format(salesTax)
+                        + "\nTotal (w tax): $" + df.format(total) + "\n");
                 for (MenuItem item : order.getListOfItems()) {
                     writer.write(" - " + item.toString() + "\n");
                 }

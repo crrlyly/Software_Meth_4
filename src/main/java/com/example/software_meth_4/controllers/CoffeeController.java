@@ -17,6 +17,9 @@ import static com.example.software_meth_4.GlobalData.currentOrder;
  * @author Carly Chick
  */
 public class CoffeeController{
+    @FXML private ComboBox<CupSize> sizeDropDown;
+    @FXML private ComboBox<Integer> quantityDropDown;
+    @FXML private TextField price;
 
     @FXML private CheckBox creamCheckBox;
     @FXML private CheckBox vanillaCheckBox;
@@ -25,13 +28,11 @@ public class CoffeeController{
     @FXML private CheckBox caramelCheckBox;
 
     private CheckBox[] checkBoxes;
-
-    @FXML private ComboBox<CupSize> sizeDropDown;
-    @FXML private ComboBox<Integer> quantityDropDown;
-    @FXML private TextField price;
-
     private final DecimalFormat df = new DecimalFormat("0.00");
 
+    /**
+     * Initializes the Coffee page.
+     */
     public void initialize(){
         initializeSizeTypeDropDown();
         initializeQuantityDropDown();
@@ -39,6 +40,9 @@ public class CoffeeController{
         displayPrice();
     }
 
+    /**
+     * Adds the coffee to the current order.
+     */
     @FXML
     private void clickAddToOrderBtn(){
         MenuItem coffee = new Coffee(quantityDropDown.getValue(), sizeDropDown.getValue(), getAddIns());
@@ -51,12 +55,14 @@ public class CoffeeController{
                 return;
             }
         }
-
         currentOrder.add(coffee);
         showItemAddedPopup();
         clearAll();
     }
 
+    /**
+     * Shows the pop-up once a coffee was added.
+     */
     @FXML
     private void showItemAddedPopup() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -66,6 +72,9 @@ public class CoffeeController{
         alert.showAndWait();
     }
 
+    /**
+     * Clears all inputs
+     */
     @FXML
     private void clearAll() {
         sizeDropDown.getSelectionModel().clearSelection();
@@ -80,6 +89,9 @@ public class CoffeeController{
         displayPrice();
     }
 
+    /**
+     * Initializes the coffee size drop down.
+     */
     @FXML
     private void initializeSizeTypeDropDown(){
         sizeDropDown.getItems().addAll(CupSize.values());
@@ -103,6 +115,9 @@ public class CoffeeController{
         sizeDropDown.getSelectionModel().selectFirst();
     }
 
+    /**
+     * Initializes the quantity drop down.
+     */
     @FXML
     private void initializeQuantityDropDown(){
         Integer[] nums = {1,2,3,4,5,6,7,8,9,10};
@@ -110,11 +125,20 @@ public class CoffeeController{
         quantityDropDown.getSelectionModel().selectFirst();
     }
 
+    /**
+     * Brings back to main page once main menu button is clicked.
+     *
+     * @throws IOException if button fails
+     */
     @FXML
     private void onMainMenuBtnClick() throws IOException {
         Main.switchRoot("main-view.fxml", "RU Cafe");
     }
 
+    /**
+     * gets an array of all selected add-ins.
+     * @return list of addins
+     */
     @FXML
     private ArrayList<AddIns> getAddIns(){
         ArrayList<AddIns> addIns = new ArrayList<>();
@@ -136,6 +160,9 @@ public class CoffeeController{
         return addIns;
     }
 
+    /**
+     * Displays the price.
+     */
     @FXML
     private void displayPrice(){
         MenuItem coffee = new Coffee(quantityDropDown.getValue(), sizeDropDown.getValue(), getAddIns());

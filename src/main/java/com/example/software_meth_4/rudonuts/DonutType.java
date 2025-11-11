@@ -1,6 +1,10 @@
 package com.example.software_meth_4.rudonuts;
-import java.util.List;
 
+/**
+ * This enum class stores the donut types for a donut.
+ *
+ * @author Carly Chick
+ */
 public enum DonutType {
     YEAST(1.99),
     CAKE(2.19),
@@ -15,9 +19,5 @@ public enum DonutType {
 
     public double getPrice() {
         return price;
-    }
-
-    public List<Flavor> flavors() {
-        return Flavor.byType(this);
     }
 }

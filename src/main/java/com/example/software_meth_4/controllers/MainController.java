@@ -4,6 +4,11 @@ import com.example.software_meth_4.Main;
 import javafx.fxml.FXML;
 import java.io.IOException;
 
+/**
+ * This controller stores the methods for the main page.
+ *
+ * @author Carly Chick
+ */
 public class MainController {
 
     public void initialize(){

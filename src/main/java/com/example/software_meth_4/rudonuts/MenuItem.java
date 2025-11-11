@@ -1,5 +1,10 @@
 package com.example.software_meth_4.rudonuts;
 
+/**
+ * This class represents a menu item.
+ *
+ * @author Carly Chick
+ */
 public abstract class MenuItem {
     protected int quantity;
 

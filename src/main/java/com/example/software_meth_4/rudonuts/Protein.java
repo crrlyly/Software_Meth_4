@@ -1,5 +1,10 @@
 package com.example.software_meth_4.rudonuts;
 
+/**
+ * This enum class stores the protein for a sandwich.
+ *
+ * @author Carly Chick
+ */
 public enum Protein {
     BEEF(12.99),
     CHICKEN(10.99),

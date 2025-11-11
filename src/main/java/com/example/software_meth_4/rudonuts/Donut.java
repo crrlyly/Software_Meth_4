@@ -1,5 +1,10 @@
 package com.example.software_meth_4.rudonuts;
 
+/**
+ * This class represents a donut menu item.
+ *
+ * @author Carly Chick
+ */
 public class Donut extends MenuItem{
     private DonutType type;
     private Flavor flavor;

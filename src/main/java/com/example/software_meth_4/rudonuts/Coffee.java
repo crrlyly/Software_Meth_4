@@ -1,6 +1,11 @@
 package com.example.software_meth_4.rudonuts;
 import java.util.ArrayList;
 
+/**
+ * This class represents a coffee menu item.
+ *
+ * @author Carly Chick
+ */
 public class Coffee extends MenuItem{
     private CupSize size;
     private ArrayList<AddIns> addIns;

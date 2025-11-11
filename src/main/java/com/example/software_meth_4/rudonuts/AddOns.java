@@ -1,5 +1,10 @@
 package com.example.software_meth_4.rudonuts;
 
+/**
+ * This enum class stores the add-ons for a sandwich.
+ *
+ * @author Carly Chick
+ */
 public enum AddOns {
     LETTUCE(0.30),
     TOMATO(0.30),

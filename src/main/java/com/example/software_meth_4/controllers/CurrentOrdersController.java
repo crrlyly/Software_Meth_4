@@ -6,13 +6,15 @@ import com.example.software_meth_4.rudonuts.*;
 import com.example.software_meth_4.rudonuts.MenuItem;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
 import java.io.IOException;
 import java.text.DecimalFormat;
-
 import static com.example.software_meth_4.GlobalData.*;
 
-
+/**
+ * This controller stores the methods for the current orders page.
+ *
+ * @author Carly Chick
+ */
 public class CurrentOrdersController{
 
    @FXML private ListView<MenuItem> listView;

@@ -10,10 +10,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
-
 import static com.example.software_meth_4.GlobalData.*;
 
-
+/**
+ * This controller stores the methods for the orders placed page.
+ *
+ * @author Carly Chick
+ */
 public class OrdersPlacedController{
 
     @FXML private ComboBox<Order> orderNumberDropDown;

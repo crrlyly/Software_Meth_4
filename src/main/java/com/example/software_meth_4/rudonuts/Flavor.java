@@ -3,6 +3,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * This enum class stores the flavors for a donut.
+ *
+ * @author Carly Chick
+ */
 public enum Flavor {
     GLAZED(DonutType.YEAST),
     CHOCOLATE(DonutType.YEAST),
@@ -19,13 +24,12 @@ public enum Flavor {
     SEMI_GLAZED(DonutType.DONUTHOLE),
     CINNAMON(DonutType.DONUTHOLE),
 
-    PUMPKIN(DonutType.SEASONAL),
-    STRAWBERRY_GLAZED(DonutType.SEASONAL);
+    PUMPKIN_SPICE(DonutType.SEASONAL),
+    SPOOKY(DonutType.SEASONAL);
 
     private final DonutType type;
 
     Flavor(DonutType type) { this.type = type; }
-    public DonutType getType() { return type; }
 
     public static List<Flavor> byType(DonutType type) {
         return Arrays.stream(values())

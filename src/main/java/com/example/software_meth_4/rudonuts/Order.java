@@ -1,8 +1,12 @@
 package com.example.software_meth_4.rudonuts;
 import java.util.ArrayList;
 
+/**
+ * This class represents a person's order.
+ *
+ * @author Carly Chick
+ */
 public class Order {
-
     private int orderNumber;
     private ArrayList<MenuItem> listOfItems;
 

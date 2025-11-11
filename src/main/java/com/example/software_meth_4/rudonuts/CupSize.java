@@ -1,5 +1,10 @@
 package com.example.software_meth_4.rudonuts;
 
+/**
+ * This enum class stores the cup sizes for a coffee.
+ *
+ * @author Carly Chick
+ */
 public enum CupSize {
     SHORT(2.39),
     TALL(2.99),

@@ -1,6 +1,11 @@
 package com.example.software_meth_4.rudonuts;
 import java.util.ArrayList;
 
+/**
+ * This class represents a sandwich menu item.
+ *
+ * @author Carly Chick
+ */
 public class Sandwich extends MenuItem{
     protected Bread bread;
     protected Protein protein;

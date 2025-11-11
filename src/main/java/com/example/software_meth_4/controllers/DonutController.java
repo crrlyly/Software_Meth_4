@@ -1,13 +1,18 @@
 package com.example.software_meth_4.controllers;
 
+import javafx.fxml.FXML;
 import com.example.software_meth_4.Main;
 import com.example.software_meth_4.rudonuts.*;
 import com.example.software_meth_4.rudonuts.MenuItem;
-import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.TextField;
+
+import java.awt.*;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import static com.example.software_meth_4.GlobalData.currentOrder;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * This controller stores the methods for the donut page.
@@ -21,6 +26,7 @@ public class DonutController{
     @FXML private ComboBox<Integer> quantity;
     @FXML private ListView<MenuItem> displayOrder;
     @FXML private TextField displaySubTotal;
+    @FXML private ImageView donutImg;
 
     private final DecimalFormat df = new DecimalFormat("0.00");
 
@@ -124,6 +130,8 @@ public class DonutController{
     private void displayDonutTypeFlavors(){
         displayFlavors.getItems().clear();
         DonutType selectedType = typeDropDown.getValue();
+        Image image = new Image(getClass().getResource("/com/example/software_meth_4/images/" + selectedType.getImg()).toExternalForm());
+        donutImg.setImage(image);
         displayFlavors.getItems().addAll(Flavor.byType(selectedType));
     }
 

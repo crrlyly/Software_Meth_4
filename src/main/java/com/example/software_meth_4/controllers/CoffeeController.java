@@ -135,7 +135,7 @@ public class CoffeeController{
     @FXML
     private void onMainMenuBtnClick() throws IOException {
 //        Main.switchRoot("main-view.fxml", "RU Cafe");
-        Main.goTo("/com/example/software_meth_4/main-view.fxml", null, "RU Cafe");
+        Main.goTo("/com/example/software_meth_4/main-view.fxml", "RU Cafe");
     }
 
     /**

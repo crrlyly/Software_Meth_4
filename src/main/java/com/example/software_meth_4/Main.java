@@ -34,19 +34,13 @@ public class Main extends Application {
      * Navigates to another FXML page safely, with optional controller initialization
      * and a window title (page name) displayed at the top.
      *
-     * @param fxmlPath   the FXML file path (e.g. "/com/example/software_meth_4/coffee-view.fxml")
-     * @param init       an optional Consumer to initialize the controller (can be null)
+     * @param fxmlPath   the FXML file path
      * @param pageTitle  the name of the page to display in the window title bar
      */
-    public static void goTo(String fxmlPath, Consumer<Object> init, String pageTitle) {
+    public static void goTo(String fxmlPath, String pageTitle) {
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxmlPath));
             Parent root = loader.load();
-            Object controller = loader.getController();
-
-            if (init != null) {
-                init.accept(controller);
-            }
 
             Platform.runLater(() -> {
                 try {

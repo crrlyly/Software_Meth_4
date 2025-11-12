@@ -24,12 +24,20 @@ public class CurrentOrdersController{
 
     private final DecimalFormat df = new DecimalFormat("0.00");
 
+    /**
+     * Initializes the elements on the CurrentOrders page.
+     */
     @FXML
     public void initialize(){
         listView.setItems(GlobalData.currentOrder);
         displayPrice();
     }
 
+    /**
+     * Switches the page to the main menu when button clicked.
+     *
+     * @throws IOException exception thrown if failed
+     */
     @FXML
     private void onMainMenuBtnClick() throws IOException {
 //        Main.switchRoot("main-view.fxml", "RU Cafe");
@@ -37,6 +45,9 @@ public class CurrentOrdersController{
 
     }
 
+    /**
+     * Displays the price of the items.
+     */
     @FXML
     private void displayPrice(){
         double subTotal = 0;
@@ -50,6 +61,9 @@ public class CurrentOrdersController{
         totalTextField.setText("$" + df.format(total));
     }
 
+    /**
+     * Removes the order item.
+     */
     @FXML
     private void removeItem(){
         MenuItem selectedItem = listView.getSelectionModel().getSelectedItem();
@@ -57,6 +71,9 @@ public class CurrentOrdersController{
         displayPrice();
     }
 
+    /**
+     * Places the order.
+     */
     @FXML
     private void placeOrder(){
         if(currentOrder.isEmpty()){
@@ -71,6 +88,9 @@ public class CurrentOrdersController{
         clearAll();
     }
 
+    /**
+     * Once the order is added, a popup will show.
+     */
     @FXML
     private void showOrderAddedPopup() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -80,6 +100,9 @@ public class CurrentOrdersController{
         alert.showAndWait();
     }
 
+    /**
+     * If no items in the order, popup will show.
+     */
     @FXML
     private void showNoOrdersPopup() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -89,11 +112,12 @@ public class CurrentOrdersController{
         alert.showAndWait();
     }
 
+    /**
+     * Clears the listview and resets the price.
+     */
     @FXML
     private void clearAll() {
-        // Clear all ListViews
         listView.getItems().clear();
-
         displayPrice();
     }
 

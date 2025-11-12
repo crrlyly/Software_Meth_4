@@ -32,6 +32,9 @@ public class DonutController{
 
     private final DecimalFormat df = new DecimalFormat("0.00");
 
+    /**
+     * Initializes the donut page.
+     */
     @FXML
     public void initialize(){
         initDonutTypeDropDown();
@@ -57,6 +60,9 @@ public class DonutController{
         });
     }
 
+    /**
+     * Initializes the donut type dropdown.
+     */
     @FXML
     private void initDonutTypeDropDown(){
         typeDropDown.getItems().addAll(DonutType.values());
@@ -79,6 +85,9 @@ public class DonutController{
         });
     }
 
+    /**
+     * Initializes the quantity dropdown.
+     */
     @FXML
     private void initQuantityDropDown(){
         Integer[] nums = {1,2,3,4,5,6,7,8,9,10};
@@ -86,6 +95,9 @@ public class DonutController{
     }
 
 
+    /**
+     * Adds the donut into the output listview.
+     */
     @FXML
     private void addDonut(){
         if(typeDropDown.getValue() == null || quantity.getValue() == null ||
@@ -109,12 +121,20 @@ public class DonutController{
         displaySubTotal.setText("$" + df.format(getPrice()));
     }
 
+    /**
+     * Removes the donut from the list.
+     */
     @FXML
     private void removeDonut(){
         displayOrder.getItems().remove(displayOrder.getSelectionModel().getSelectedItem());
         displaySubTotal.setText("$" + df.format(getPrice()));
     }
 
+    /**
+     * Gets the price of the donuts that the user picked.
+     *
+     * @return the price
+     */
     @FXML
     private double getPrice(){
         double total = 0;
@@ -124,23 +144,35 @@ public class DonutController{
         return total;
     }
 
+    /**
+     * Brings user back to main menu
+     *
+     * @throws IOException throws error if fails
+     */
     @FXML
     private void onMainMenuBtnClick() throws IOException {
-//        Main.switchRoot("main-view.fxml", "RU Cafe");
         Main.goTo("/com/example/software_meth_4/main-view.fxml", "RU Cafe");
-
     }
 
+    /**
+     * Displays the donut type flavors in the dropdown and changes the image along with
+     * showing the flavors in the listview.
+     */
     @FXML
     private void displayDonutTypeFlavors(){
         displayFlavors.getItems().clear();
         DonutType selectedType = typeDropDown.getValue();
         if (selectedType == null) return;
-        Image image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/software_meth_4/images/" + selectedType.getImg())).toExternalForm());
+        Image image = new Image(Objects.requireNonNull(getClass()
+                .getResource("/com/example/software_meth_4/images/" +
+                        selectedType.getImg())).toExternalForm());
         donutImg.setImage(image);
         displayFlavors.getItems().addAll(Flavor.byType(selectedType));
     }
 
+    /**
+     * Adds the donuts to the order.
+     */
     @FXML
     private void clickAddToOrderBtn() {
         var dest = currentOrder;
@@ -167,6 +199,9 @@ public class DonutController{
         clearAll();
     }
 
+    /**
+     * After donut was added to order, popup will show.
+     */
     @FXML
     private void showItemAddedPopup() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -176,6 +211,9 @@ public class DonutController{
         alert.showAndWait();
     }
 
+    /**
+     * If donut output listview in empty, popup will show.
+     */
     @FXML
     private void showEmptyListPopup() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -185,6 +223,9 @@ public class DonutController{
         alert.showAndWait();
     }
 
+    /**
+     * If any info is missing from user, popup will show
+     */
     @FXML
     private void showMissingInputPopup() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -194,6 +235,9 @@ public class DonutController{
         alert.showAndWait();
     }
 
+    /**
+     * Clears all the user's inputs.
+     */
     @FXML
     private void clearAll() {
         // Clear all ComboBoxes

@@ -11,38 +11,65 @@ import java.io.IOException;
  */
 public class MainController {
 
+    /**
+     * Initializes the main menu.
+     */
     @FXML
     public void initialize(){
 
     }
 
+    /**
+     * Brings user to donut page
+     *
+     * @throws IOException throws error if fails
+     */
     @FXML
     private void onDonutContainerClick() throws IOException {
-//        Main.switchRoot("donut-view.fxml", "RU Cafe - Donuts");
         Main.goTo("/com/example/software_meth_4/donut-view.fxml", "RU Cafe - Donuts");
 
     }
+
+    /**
+     * Brings user to sandwich page
+     *
+     * @throws IOException throws error if fails
+     */
     @FXML
     private void onSandwichContainerClick() throws IOException {
-//        Main.switchRoot("sandwich-view.fxml", "RU Cafe - Sandwiches");
         Main.goTo("/com/example/software_meth_4/sandwich-view.fxml", "RU Cafe - Sandwiches");
 
     }
+
+    /**
+     * Brings user to coffee page
+     *
+     * @throws IOException throws error if fails
+     */
     @FXML
     private void onCoffeeContainerClick() throws IOException {
-//        Main.switchRoot("coffee-view.fxml", "RU Cafe - Coffee");
         Main.goTo("/com/example/software_meth_4/coffee-view.fxml", "RU Cafe - Coffee");
 
     }
+
+    /**
+     * Brings user to current orders page
+     *
+     * @throws IOException throws error if fails
+     */
     @FXML
     private void onCurrentOrdersContainerClick() throws IOException {
-//        Main.switchRoot("current-orders-view.fxml", "RU Cafe - Current Order");
         Main.goTo("/com/example/software_meth_4/current-orders-view.fxml", "RU Cafe - Current Order");
 
     }
+
+    /**
+     * Brings user to orders placed page
+     *
+     * @throws IOException throws error if fails
+     */
     @FXML
     private void onOrdersPlacedContainerClick() throws IOException {
-//        Main.switchRoot("orders-placed-view.fxml", "RU Cafe - Orders Placed");
         Main.goTo("/com/example/software_meth_4/orders-placed-view.fxml", "RU Cafe - Orders Placed");
 
     }

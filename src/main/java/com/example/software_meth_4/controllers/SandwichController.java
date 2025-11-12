@@ -40,6 +40,9 @@ public class SandwichController{
 
     private final DecimalFormat df = new DecimalFormat("0.00");
 
+    /**
+     * Initializes the sandwich page.
+     */
     @FXML
     public void initialize(){
         initializeBreadGroup();
@@ -49,13 +52,18 @@ public class SandwichController{
         displayPrice();
     }
 
+    /**
+     * Brings user back to main menu
+     * @throws IOException error thrown if fails
+     */
     @FXML
     private void onMainMenuBtnClick() throws IOException {
-//        Main.switchRoot("main-view.fxml", "RU Cafe");
         Main.goTo("/com/example/software_meth_4/main-view.fxml", "RU Cafe");
-
     }
 
+    /**
+     * Initializes the breads
+     */
     @FXML
     private void initializeBreadGroup(){
         breadGroup = new ToggleGroup();
@@ -65,6 +73,9 @@ public class SandwichController{
         breadGroup.selectToggle(bagelRadioBtn);
     }
 
+    /**
+     * Initializes the proteins.
+     */
     @FXML
     private void initializeProteinGroup(){
         proteinGroup = new ToggleGroup();
@@ -74,6 +85,9 @@ public class SandwichController{
         proteinGroup.selectToggle(beefRadioBtn);
     }
 
+    /**
+     * Initializes the quantity dropdown.
+     */
     @FXML
     private void initializeQuantityDropDown(){
         Integer[] nums = {1,2,3,4,5,6,7,8,9,10};
@@ -81,6 +95,11 @@ public class SandwichController{
         quantityDropDown.getSelectionModel().selectFirst();
     }
 
+    /**
+     * Creates a list of the addons the user chose.
+     *
+     * @return the list the user chose
+     */
     @FXML
     private ArrayList<AddOns> getAddOns(){
         ArrayList<AddOns> addIns = new ArrayList<>();
@@ -100,6 +119,9 @@ public class SandwichController{
         return addIns;
     }
 
+    /**
+     * Calculates and displays the price.
+     */
     @FXML
     private void displayPrice(){
         RadioButton selected1 = (RadioButton) breadGroup.getSelectedToggle();
@@ -112,6 +134,9 @@ public class SandwichController{
         price.setText("$" + df.format(sandwich.price()));
     }
 
+    /**
+     * Adds the sandwich to the current order.
+     */
     @FXML
     private void clickAddToOrderBtn(){
         RadioButton selected1 = (RadioButton) breadGroup.getSelectedToggle();
@@ -136,6 +161,9 @@ public class SandwichController{
         clearAll();
     }
 
+    /**
+     * Once sandwich was added, popup will show.
+     */
     @FXML
     private void showItemAddedPopup() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -145,6 +173,9 @@ public class SandwichController{
         alert.showAndWait();
     }
 
+    /**
+     * Clears all user input.
+     */
     @FXML
     private void clearAll() {
         quantityDropDown.getSelectionModel().clearSelection();
@@ -159,5 +190,4 @@ public class SandwichController{
 
         displayPrice();
     }
-
 }

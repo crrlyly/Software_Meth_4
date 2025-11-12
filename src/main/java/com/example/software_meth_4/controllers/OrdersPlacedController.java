@@ -25,11 +25,17 @@ public class OrdersPlacedController{
 
     private final DecimalFormat df = new DecimalFormat("0.00");
 
+    /**
+     * Initializes the orders placed.
+     */
     @FXML
     public void initialize(){
         initOrderDropDown();
     }
 
+    /**
+     * Initializes the order number dropdown
+     */
     @FXML
     private void initOrderDropDown(){
         orderNumberDropDown.setItems(allOrders);
@@ -46,13 +52,18 @@ public class OrdersPlacedController{
         });
     }
 
+    /**
+     * Brings user back to the main menu
+     * @throws IOException error thrown if fails
+     */
     @FXML
     private void onMainMenuBtnClick() throws IOException {
-//        Main.switchRoot("main-view.fxml", "RU Cafe");
         Main.goTo("/com/example/software_meth_4/main-view.fxml", "RU Cafe");
-
     }
 
+    /**
+     * Displays the order info.
+     */
     @FXML
     private void getOrderInfo(){
         clearAll();
@@ -68,6 +79,9 @@ public class OrdersPlacedController{
         totalTextField.setText("$" + df.format(total));
     }
 
+    /**
+     * Cancels the chosen order.
+     */
     @FXML
     private void cancelOrder(){
         Order order = orderNumberDropDown.getValue();
@@ -81,6 +95,9 @@ public class OrdersPlacedController{
         clearAll();
     }
 
+    /**
+     * Once order was cancelled, popup will show.
+     */
     @FXML
     private void showCancelOrderPopup(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -90,6 +107,9 @@ public class OrdersPlacedController{
         alert.showAndWait();
     }
 
+    /**
+     * After order was cleared, reset listview and price.
+     */
     @FXML
     private void clearAll() {
         listView.getItems().clear();
@@ -97,6 +117,9 @@ public class OrdersPlacedController{
         totalTextField.clear();
     }
 
+    /**
+     * Exports order info to a txt file.
+     */
     @FXML
     private void exportOrders() {
         if(allOrders.isEmpty()){
@@ -132,6 +155,11 @@ public class OrdersPlacedController{
         }
     }
 
+    /**
+     * Once exported, popup will show.
+     * @param message
+     */
+    @FXML
     private void showExportPopup(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Export Orders Status");

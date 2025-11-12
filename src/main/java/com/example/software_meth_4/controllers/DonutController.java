@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import java.awt.*;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.Objects;
+
 import static com.example.software_meth_4.GlobalData.currentOrder;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -130,7 +132,7 @@ public class DonutController{
     private void displayDonutTypeFlavors(){
         displayFlavors.getItems().clear();
         DonutType selectedType = typeDropDown.getValue();
-        Image image = new Image(getClass().getResource("/com/example/software_meth_4/images/" + selectedType.getImg()).toExternalForm());
+        Image image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/software_meth_4/images/" + selectedType.getImg())).toExternalForm());
         donutImg.setImage(image);
         displayFlavors.getItems().addAll(Flavor.byType(selectedType));
     }

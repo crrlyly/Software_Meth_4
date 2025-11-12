@@ -50,6 +50,7 @@ public class CoffeeController{
             MenuItem item = currentOrder.get(i);
             if (item.equals(coffee)) {
                 item.setQuantity(item.getQuantity() + coffee.getQuantity());
+                currentOrder.set(i, item);
                 showItemAddedPopup();
                 clearAll();
                 return;

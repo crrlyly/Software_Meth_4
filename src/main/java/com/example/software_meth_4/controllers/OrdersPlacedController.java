@@ -55,7 +55,8 @@ public class OrdersPlacedController{
     private void getOrderInfo(){
         clearAll();
         Order order = orderNumberDropDown.getValue();
-        listView.getItems().addAll(order.getListOfItems());
+        if (order == null) return;
+        listView.getItems().setAll(order.getListOfItems());
         double subTotal = 0;
         for(MenuItem item: order.getListOfItems()){
             subTotal = subTotal + item.price();
@@ -71,8 +72,6 @@ public class OrdersPlacedController{
         if (order == null) return;
         allOrders.remove(order);
 
-        orderNumberDropDown.getItems().remove(order);
-        orderNumberDropDown.setItems(allOrders);
         orderNumberDropDown.getSelectionModel().clearSelection();
         orderNumberDropDown.setValue(null);
 

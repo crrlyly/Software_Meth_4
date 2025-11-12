@@ -50,7 +50,7 @@ public class CurrentOrdersController{
     @FXML
     private void removeItem(){
         MenuItem selectedItem = listView.getSelectionModel().getSelectedItem();
-        currentOrder.remove(selectedItem);
+        if (selectedItem != null) currentOrder.remove(selectedItem);
         displayPrice();
     }
 
@@ -89,7 +89,6 @@ public class CurrentOrdersController{
     @FXML
     private void clearAll() {
         // Clear all ListViews
-        listView.getItems().clear();
         listView.getItems().clear();
 
         displayPrice();

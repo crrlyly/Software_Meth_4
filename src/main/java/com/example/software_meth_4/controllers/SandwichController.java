@@ -122,6 +122,7 @@ public class SandwichController{
             MenuItem item = currentOrder.get(i);
             if (item.equals(sandwich)) {
                 item.setQuantity(item.getQuantity() + sandwich.getQuantity());
+                currentOrder.set(i, item);
                 showItemAddedPopup();
                 clearAll();
                 return;

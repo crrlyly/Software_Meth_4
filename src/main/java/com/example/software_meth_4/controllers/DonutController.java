@@ -104,7 +104,7 @@ public class DonutController{
                 return;
             }
         }
-        displayOrder.getItems().addAll(donut);
+        displayOrder.getItems().add(donut);
         displaySubTotal.setText("$" + df.format(getPrice()));
     }
 
@@ -132,6 +132,7 @@ public class DonutController{
     private void displayDonutTypeFlavors(){
         displayFlavors.getItems().clear();
         DonutType selectedType = typeDropDown.getValue();
+        if (selectedType == null) return;
         Image image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/software_meth_4/images/" + selectedType.getImg())).toExternalForm());
         donutImg.setImage(image);
         displayFlavors.getItems().addAll(Flavor.byType(selectedType));
@@ -152,6 +153,7 @@ public class DonutController{
             if (idx >= 0) {
                 MenuItem existing = dest.get(idx);
                 existing.setQuantity(existing.getQuantity() + incoming.getQuantity());
+                dest.set(idx, existing);
             } else {
                 dest.add(incoming);
             }

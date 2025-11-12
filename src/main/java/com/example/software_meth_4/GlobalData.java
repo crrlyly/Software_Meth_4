@@ -3,6 +3,8 @@ package com.example.software_meth_4;
 import java.util.ArrayList;
 import com.example.software_meth_4.rudonuts.MenuItem;
 import com.example.software_meth_4.rudonuts.Order;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  * This class stores the global variables used in the controllers.
@@ -10,7 +12,7 @@ import com.example.software_meth_4.rudonuts.Order;
  * @author Carly Chick
  */
 public class GlobalData {
-    public static ArrayList<Order> allOrders = new ArrayList<>();
-    public static ArrayList<MenuItem> currentOrder = new ArrayList<>();
+    public static ObservableList<Order> allOrders = FXCollections.observableArrayList();
+    public static ObservableList<MenuItem> currentOrder = FXCollections.observableArrayList();
     public static int orderNumber = 0;
 }

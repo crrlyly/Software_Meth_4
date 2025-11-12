@@ -25,16 +25,8 @@ public class CurrentOrdersController{
     private final DecimalFormat df = new DecimalFormat("0.00");
 
     public void initialize(){
-        javafx.application.Platform.runLater(() -> {
-            displayItems();
-            displayPrice();
-        });
-    }
-
-    @FXML
-    private void displayItems() {
-        listView.getItems().setAll(GlobalData.currentOrder);
-        listView.refresh();
+        listView.setItems(GlobalData.currentOrder);
+        displayPrice();
     }
 
     @FXML
@@ -60,7 +52,6 @@ public class CurrentOrdersController{
         MenuItem selectedItem = listView.getSelectionModel().getSelectedItem();
         currentOrder.remove(selectedItem);
         displayPrice();
-        displayItems();
     }
 
     @FXML

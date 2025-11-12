@@ -1,5 +1,6 @@
 package com.example.software_meth_4.rudonuts;
-import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  * This class represents a person's order.
@@ -8,18 +9,18 @@ import java.util.ArrayList;
  */
 public class Order {
     private int orderNumber;
-    private ArrayList<MenuItem> listOfItems;
+    private ObservableList<MenuItem> listOfItems;
 
-    public Order(int orderNumber, ArrayList<MenuItem> listOfItems) {
+    public Order(int orderNumber, ObservableList<MenuItem> listOfItems) {
         this.orderNumber = orderNumber;
-        this.listOfItems = new ArrayList<>(listOfItems);
+        this.listOfItems = FXCollections.observableArrayList(listOfItems);
     }
 
     public int getOrderNumber() {
         return orderNumber;
     }
 
-    public ArrayList<MenuItem> getListOfItems() {
+    public ObservableList<MenuItem> getListOfItems() {
         return listOfItems;
     }
 

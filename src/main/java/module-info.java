@@ -3,6 +3,7 @@ module com.example.software_meth_4 {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.desktop;
+    requires javafx.base;
 
 
     opens com.example.software_meth_4 to javafx.fxml;

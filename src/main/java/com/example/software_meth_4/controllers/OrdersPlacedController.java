@@ -32,7 +32,7 @@ public class OrdersPlacedController{
 
     @FXML
     private void initOrderDropDown(){
-        orderNumberDropDown.getItems().addAll(allOrders);
+        orderNumberDropDown.setItems(allOrders);
         orderNumberDropDown.setCellFactory(param -> new ListCell<Order>() {
             @Override
             protected void updateItem(Order item, boolean empty) {
@@ -72,6 +72,7 @@ public class OrdersPlacedController{
         allOrders.remove(order);
 
         orderNumberDropDown.getItems().remove(order);
+        orderNumberDropDown.setItems(allOrders);
         orderNumberDropDown.getSelectionModel().clearSelection();
         orderNumberDropDown.setValue(null);
 

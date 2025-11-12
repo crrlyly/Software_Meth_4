@@ -9,11 +9,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.function.Consumer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main extends Application {
 
     private static Stage stage;      // keep a Stage reference
-    private static Scene mainScene;
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -22,7 +24,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(
                 Main.class.getResource("/com/example/software_meth_4/main-view.fxml")
         );
-        mainScene = new Scene(fxmlLoader.load(), 600, 620);
+        Scene mainScene = new Scene(fxmlLoader.load(), 600, 620);
         stage.setTitle("RU Cafe");
         stage.setScene(mainScene);
         stage.show();
@@ -59,11 +61,11 @@ public class Main extends Application {
                     stage.setTitle("RU Cafe - " + pageTitle);
                     stage.show();
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    LOGGER.log(Level.SEVERE, "Error switching to page: " + pageTitle, e);
                 }
             });
         } catch (IOException ex) {
-            ex.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Failed to load FXML: " + fxmlPath, ex);
         }
     }
 }

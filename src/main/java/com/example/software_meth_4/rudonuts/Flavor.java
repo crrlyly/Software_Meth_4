@@ -29,8 +29,17 @@ public enum Flavor {
 
     private final DonutType type;
 
+    /**
+     * Constructor for a donut flavor with the donut type
+     * @param type donut type
+     */
     Flavor(DonutType type) { this.type = type; }
 
+    /**
+     * Returns a list of the flavors by donut type that was selected
+     * @param type donut type selected
+     * @return list of flavors of the donut type
+     */
     public static List<Flavor> byType(DonutType type) {
         return Arrays.stream(values())
                 .filter(f -> f.type == type)

@@ -13,10 +13,18 @@ public enum CupSize {
 
     private final double basePrice;
 
+    /**
+     * Cupsize constructor with base-price.
+     * @param basePrice price of the cup size
+     */
     CupSize(double basePrice) {
         this.basePrice = basePrice;
     }
 
+    /**
+     * Get the base price of the coffee size.
+     * @return base price
+     */
     public double getBasePrice() {
         return basePrice;
     }

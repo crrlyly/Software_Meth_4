@@ -11,6 +11,13 @@ public class Sandwich extends MenuItem{
     protected Protein protein;
     protected ArrayList<AddOns> addOns;
 
+    /**
+     * Constructor for a sandwich
+     * @param quantity quantity
+     * @param bread bread type
+     * @param protein protein type
+     * @param addOns list of addons
+     */
     public Sandwich(int quantity, Bread bread, Protein protein, ArrayList<AddOns> addOns) {
         super(quantity);
         this.bread = bread;
@@ -18,6 +25,10 @@ public class Sandwich extends MenuItem{
         this.addOns = addOns;
     }
 
+    /**
+     * Calculates the price of the sandwich
+     * @return price
+     */
     public double price(){
         double price = 0;
         price = price + protein.getPrice();
@@ -27,6 +38,11 @@ public class Sandwich extends MenuItem{
         return price * quantity;
     };
 
+    /**
+     * Checks to see if sandwiches are the same to see if quantity stacks.
+     * @param obj   the reference object with which to compare.
+     * @return true if equal; otherwise false
+     */
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof Sandwich sandwich){
@@ -35,6 +51,10 @@ public class Sandwich extends MenuItem{
         return false;
     }
 
+    /**
+     * Creates a string to represent the sandwich for the current orders.
+     * @return string of sandwich
+     */
     @Override
     public String toString(){
         String addOnsString = (addOns.isEmpty()) ? "nothing" : addOns.toString();

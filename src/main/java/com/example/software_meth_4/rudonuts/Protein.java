@@ -12,10 +12,18 @@ public enum Protein {
 
     private final double price;
 
+    /**
+     * Constructor for a protein enum with a price
+     * @param price price of protein
+     */
     Protein(double price){
         this.price = price;
     }
 
+    /**
+     * Returns the price of the protein
+     * @return price
+     */
     public double getPrice() {
         return price;
     }

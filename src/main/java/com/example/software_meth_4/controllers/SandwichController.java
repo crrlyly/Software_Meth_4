@@ -40,6 +40,7 @@ public class SandwichController{
 
     private final DecimalFormat df = new DecimalFormat("0.00");
 
+    @FXML
     public void initialize(){
         initializeBreadGroup();
         initializeProteinGroup();
@@ -50,7 +51,9 @@ public class SandwichController{
 
     @FXML
     private void onMainMenuBtnClick() throws IOException {
-        Main.switchRoot("main-view.fxml", "RU Cafe");
+//        Main.switchRoot("main-view.fxml", "RU Cafe");
+        Main.goTo("/com/example/software_meth_4/main-view.fxml", null, "RU Cafe");
+
     }
 
     @FXML

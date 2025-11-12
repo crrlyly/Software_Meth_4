@@ -1,11 +1,14 @@
 package com.example.software_meth_4;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.function.Consumer;
 
 public class Main extends Application {
 
@@ -25,11 +28,42 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void switchRoot(String fxml, String title) throws IOException {
-        FXMLLoader loader = new FXMLLoader(
-                Main.class.getResource("/com/example/software_meth_4/" + fxml)
-        );
-        mainScene.setRoot(loader.load());
-        stage.setTitle(title);
+    /**
+     * Navigates to another FXML page safely, with optional controller initialization
+     * and a window title (page name) displayed at the top.
+     *
+     * @param fxmlPath   the FXML file path (e.g. "/com/example/software_meth_4/coffee-view.fxml")
+     * @param init       an optional Consumer to initialize the controller (can be null)
+     * @param pageTitle  the name of the page to display in the window title bar
+     */
+    public static void goTo(String fxmlPath, Consumer<Object> init, String pageTitle) {
+        try {
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxmlPath));
+            Parent root = loader.load();
+            Object controller = loader.getController();
+
+            if (init != null) {
+                init.accept(controller);
+            }
+
+            Platform.runLater(() -> {
+                try {
+                    Scene scene = stage.getScene();
+                    if (scene == null) {
+                        scene = new Scene(root, 600, 620);
+                        stage.setScene(scene);
+                    } else {
+                        scene.setRoot(root);
+                    }
+
+                    stage.setTitle("RU Cafe - " + pageTitle);
+                    stage.show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }

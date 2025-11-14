@@ -5,6 +5,7 @@ module com.example.software_meth_4 {
     requires java.desktop;
     requires javafx.base;
     requires java.logging;
+    requires org.junit.jupiter.api;
 
 
     opens com.example.software_meth_4 to javafx.fxml;

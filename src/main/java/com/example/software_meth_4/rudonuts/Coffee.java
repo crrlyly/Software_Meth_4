@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * This class represents a coffee menu item.
  *
- * @author Carly Chick
+ * @author Alec Cotler
  */
 public class Coffee extends MenuItem{
     private CupSize size;

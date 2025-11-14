@@ -13,7 +13,7 @@ import static com.example.software_meth_4.GlobalData.currentOrder;
 /**
  * This controller stores the methods for the sandwich page.
  *
- * @author Carly Chick
+ * @author Carly Chick, Alec Cotler
  */
 public class SandwichController{
 

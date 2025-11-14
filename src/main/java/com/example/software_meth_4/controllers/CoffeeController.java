@@ -14,7 +14,7 @@ import static com.example.software_meth_4.GlobalData.currentOrder;
 /**
  * This controller stores the methods for the coffee page.
  *
- * @author Carly Chick
+ * @author Carly Chick, Alec Cotler
  */
 public class CoffeeController{
     @FXML private ComboBox<CupSize> sizeDropDown;

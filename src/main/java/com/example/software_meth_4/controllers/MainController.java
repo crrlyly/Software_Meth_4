@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * This controller stores the methods for the main page.
  *
- * @author Carly Chick
+ * @author Carly Chick, Alec Cotler
  */
 public class MainController {
 

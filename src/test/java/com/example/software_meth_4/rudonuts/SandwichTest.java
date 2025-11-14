@@ -8,6 +8,11 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * JUNIT test class to test price method for Sandwich.
+ *
+ * @author Alec Cotler
+ */
 class SandwichTest {
 
     ArrayList<AddOns> addOns;

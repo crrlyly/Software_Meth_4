@@ -19,7 +19,7 @@ import javafx.scene.image.ImageView;
 /**
  * This controller stores the methods for the donut page.
  *
- * @author Carly Chick
+ * @author Carly Chick, Alec Cotler
  */
 public class DonutController{
 

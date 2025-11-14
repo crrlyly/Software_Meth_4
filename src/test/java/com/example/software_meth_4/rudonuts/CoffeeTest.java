@@ -8,6 +8,11 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * JUNIT test class to test price method for Coffee.
+ *
+ * @author Alec Cotler
+ */
 class CoffeeTest {
 
     @BeforeEach

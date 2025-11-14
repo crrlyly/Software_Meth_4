@@ -15,7 +15,7 @@ import static com.example.software_meth_4.GlobalData.*;
 /**
  * This controller stores the methods for the orders placed page.
  *
- * @author Carly Chick
+ * @author Carly Chick, Alec Cotler
  */
 public class OrdersPlacedController{
 

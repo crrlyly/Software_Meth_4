@@ -1,19 +1,31 @@
 package com.example.software_meth_4.rudonuts;
 
-import java.util.ArrayList;
-import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class SandwichTest {
+
+    ArrayList<AddOns> addOns;
+
+    @BeforeEach
+    void setUp() {
+        addOns = new ArrayList<>();
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
 
     /**
      * Test a single Chicken sandwich on Wheatbread with Cheese and Tomato.
      */
     @Test
     void testPrice_ChickenSandwichWithCheeseAndTomato() {
-        ArrayList<AddOns> addOns = new ArrayList<>();
         addOns.add(AddOns.CHEESE);
         addOns.add(AddOns.TOMATO);
 
@@ -32,7 +44,6 @@ class SandwichTest {
      */
     @Test
     void testPrice_SalmonSandwichWithLettuceAndOnion_TwoQuantity() {
-        ArrayList<AddOns> addOns = new ArrayList<>();
         addOns.add(AddOns.LETTUCE);
         addOns.add(AddOns.ONION);
 
@@ -49,4 +60,3 @@ class SandwichTest {
         assertEquals(expectedPrice, sandwich.price(), 0.001);
     }
 }
-

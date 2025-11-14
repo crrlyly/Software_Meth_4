@@ -44,7 +44,7 @@ public class Main extends Application {
                         scene.setRoot(root);
                     }
 
-                    stage.setTitle("RU Cafe - " + pageTitle);
+                    stage.setTitle(pageTitle);
                     stage.show();
                 } catch (Exception e) {
                     LOGGER.log(Level.SEVERE, "Error switching to page: " + pageTitle, e);

@@ -29,6 +29,7 @@ class SandwichTest {
         addOns.add(AddOns.CHEESE);
         addOns.add(AddOns.TOMATO);
 
+
         Sandwich sandwich = new Sandwich(
                 1,                      // quantity
                 Bread.WHEATBREAD,       // bread type
@@ -39,6 +40,7 @@ class SandwichTest {
         assertEquals(expectedPrice, sandwich.price(), 0.001);
     }
 
+
     /**
      * Test two Salmon sandwiches on Sourdough with Lettuce and Onion.
      */
@@ -46,6 +48,7 @@ class SandwichTest {
     void testPrice_SalmonSandwichWithLettuceAndOnion_TwoQuantity() {
         addOns.add(AddOns.LETTUCE);
         addOns.add(AddOns.ONION);
+
 
         Sandwich sandwich = new Sandwich(
                 2,                      // quantity
@@ -57,6 +60,8 @@ class SandwichTest {
                 + AddOns.LETTUCE.getPrice()
                 + AddOns.ONION.getPrice()) * 2;
 
+
         assertEquals(expectedPrice, sandwich.price(), 0.001);
     }
+
 }

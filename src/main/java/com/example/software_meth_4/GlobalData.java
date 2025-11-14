@@ -1,6 +1,5 @@
 package com.example.software_meth_4;
 
-import java.util.ArrayList;
 import com.example.software_meth_4.rudonuts.MenuItem;
 import com.example.software_meth_4.rudonuts.Order;
 import javafx.collections.FXCollections;

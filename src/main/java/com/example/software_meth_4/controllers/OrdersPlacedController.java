@@ -157,7 +157,7 @@ public class OrdersPlacedController{
 
     /**
      * Once exported, popup will show.
-     * @param message
+     * @param message message on popup
      */
     @FXML
     private void showExportPopup(String message) {
@@ -167,6 +167,4 @@ public class OrdersPlacedController{
         alert.setContentText(message);
         alert.showAndWait();
     }
-
-
 }

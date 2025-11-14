@@ -8,13 +8,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.function.Consumer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Main extends Application {
 
-    private static Stage stage;      // keep a Stage reference
+    private static Stage stage;
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
     @Override
@@ -30,13 +29,6 @@ public class Main extends Application {
         stage.show();
     }
 
-    /**
-     * Navigates to another FXML page safely, with optional controller initialization
-     * and a window title (page name) displayed at the top.
-     *
-     * @param fxmlPath   the FXML file path
-     * @param pageTitle  the name of the page to display in the window title bar
-     */
     public static void goTo(String fxmlPath, String pageTitle) {
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxmlPath));

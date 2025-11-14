@@ -14,7 +14,7 @@ public enum CupSize {
     private final double basePrice;
 
     /**
-     * Cupsize constructor with base-price.
+     * Cup size constructor with base-price.
      * @param basePrice price of the cup size
      */
     CupSize(double basePrice) {

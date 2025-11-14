@@ -94,7 +94,6 @@ public class DonutController{
         quantity.getItems().addAll(nums);
     }
 
-
     /**
      * Adds the donut into the output listview.
      */

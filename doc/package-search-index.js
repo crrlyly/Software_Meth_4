@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.software_meth_4","l":"com.example.software_meth_4"},{"m":"com.example.software_meth_4","l":"com.example.software_meth_4.controllers"},{"m":"com.example.software_meth_4","l":"com.example.software_meth_4.rudonuts"}];updateSearchResults();
